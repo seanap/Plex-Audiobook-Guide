@@ -56,7 +56,7 @@ A walkthrough for optimal Audiobook experience using Plex
 ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename") To set the filename and folder structure  
      * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`  
 * Copy Cover Art into the folder with your audio files (*Required for Booksonic*)
-  * `Alt-Shift-6` or Click the Quick Action button ![alt text](https://i.imgur.com/UMueLqS.png "Quick Actions") and `Export cover to file` 
+  * `Alt-Shift-6` or Click the Quick Action button ![alt text](https://i.imgur.com/UMueLqS.png "Quick Actions") and `Export cover to file`  
   ![alt text](https://i.imgur.com/vAxejs8.png "Quick Action - Cover to folder")  
 
 ### Notes
