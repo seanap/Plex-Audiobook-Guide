@@ -13,10 +13,9 @@ A walkthrough for optimal Audiobook experience using Plex
   * Restart Plex
 
 ### Configure Plex Agent  
-* Configure Agents
- * Go to `Settings > Agents > Artist > Audiobooks` Put Local Media Assets above Audiobooks
+* Go to `Settings > Agents > Artist > Audiobooks` Put Local Media Assets above Audiobooks
  ![alt text](https://i.imgur.com/oEKdpmd.png "Artist Agent Config")
- * Go to `Settings > Agents > Albums > Audiobooks` Put Local Media Assets above Audiobooks
+* Go to `Settings > Agents > Albums > Audiobooks` Put Local Media Assets above Audiobooks
  ![alt text](https://i.imgur.com/1aKHJeB.png "Album Agent Config")
 
 ### Create Audiobook Library in Plex
@@ -35,28 +34,30 @@ A walkthrough for optimal Audiobook experience using Plex
 * Install [Mp3tag](https://www.mp3tag.de/en/)
 * Install the Audible custom web sources  
   * [Guide](https://github.com/seanap/Audible.com-Search-by-Album)
-* Configure `Tag-Filename` button ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
- * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`
-* Configure `Filename-Tag` button ![alt text](https://i.imgur.com/BE25NFp.png "Filename-Tag")  
- * `Format String = %title%`
 * Cofigure `Tag Panel` Under `Tools>Options`
   ![alt text](https://i.imgur.com/ERv9n8G.png "Tag Panel")
 * Configure meaningful user-defined Genres under `Tools>Options`  
   ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")
+* Load a test file in Mp3tag, and select a track
+  * Click the Web Sources drop down button, select Audible.com > Search by Album
+   ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
+  * Configure `Tag-Filename` button ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
+   * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`
+  * Configure `Filename-Tag` button ![alt text](https://i.imgur.com/BE25NFp.png "Filename-Tag")  
+   * `Format String = %title%`
 
 ### Clean up File & Folder names  
-* [Mp3tag](https://github.com/seanap/Audible.com-Search-by-Album)  
-  * Once the `Audible.com#Search by Album.src` file is in your `%appdata%\mp3tag\data\sources` folder.
-  * Pull and set the tags
+* Drag un-tagged audiobook into Mp3tag
+  * `Ctrl-a` Select All
+  * `Ctrl-shift-i` or Click the Web Source (quick) button
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
-  * Set/fix the track numbers by hitting `ctrl-k`
-  * Then set the filename and folder structure by clicking the Tag-Filename button
-![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
+  * `Ctrl-k` Set/fix the track numbers
+  * `Alt-1` or click the Tag-Filename button
+![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename") To set the filename and folder structure  
      * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`  
 * Copy Cover Art into the folder with your audio files (*Required for Booksonic*)
-  * Use the Quick Action button ![alt text](https://i.imgur.com/UMueLqS.png "Quick Actions") to `Export cover to file`  
-  ![alt text](https://i.imgur.com/vAxejs8.png "Quick Action - Cover to folder")
-  * Alternatively, Drag and drop cover from mp3tag into Folder   
+  * `Alt-Shift-6` or Click the Quick Action button ![alt text](https://i.imgur.com/UMueLqS.png "Quick Actions") and `Export cover to file` 
+  ![alt text](https://i.imgur.com/vAxejs8.png "Quick Action - Cover to folder")  
 
 ### Notes
 Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless.  I typically wait till I have a few Audiobooks in the que before tagging and archiving.  
