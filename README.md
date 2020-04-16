@@ -12,20 +12,21 @@ A walkthrough for optimal Audiobook experience using Plex
     * `https://github.com/seanap/Audiobooks.bundle`
   * Restart Plex
 
-### Configure Plex  
+### Configure Plex Agent  
 * Configure Agents
  * Go to `Settings > Agents > Artist > Audiobooks` Put Local Media Assets above Audiobooks
  ![alt text](https://i.imgur.com/oEKdpmd.png "Artist Agent Config")
  * Go to `Settings > Agents > Albums > Audiobooks` Put Local Media Assets above Audiobooks
  ![alt text](https://i.imgur.com/1aKHJeB.png "Album Agent Config")
-* Create Audiobook Library
+
+### Create Audiobook Library in Plex
  * **General** select `Music`
  * **Add folders** browse to your Audiobook folders
  * **Advanced** set the following:  
    * Album sorting - Oldest first
-   * UNCHECK Prefer Local Metadata
-   * CHECK Store track progress
-   * UNCHECK Popular Tracks
+   * *UNCHECK* Prefer Local Metadata
+   * *CHECK* Store track progress
+   * *UNCHECK* Popular Tracks
    * Genres - Embedded tags
    * Album Art - Local Files Only
    * Agent - Audiobooks
