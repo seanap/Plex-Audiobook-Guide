@@ -68,4 +68,4 @@ Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow
 
    If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
 
-   For Android devices, I actually gave up on using the Plex app after it constantly kept loosing my place, marked the book as finished at 90%, and doesn't record the watch status. I ended up using booksonic to dl the books I want locally and use Smart Audiobook Player, with Plex as a backup.
+   For Android devices, I actually gave up on using the Plex app after it constantly kept loosing my place, marked the book as finished at 90%, and doesn't record the watch status. I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart, but it's a step in the right direction.
