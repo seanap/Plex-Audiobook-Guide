@@ -49,9 +49,9 @@ A walkthrough for optimal Audiobook experience using Plex
 ### Clean up File & Folder names  
 * Drag un-tagged audiobook into Mp3tag
   * `Ctrl-a` Select All
+  * `Ctrl-k` Set/fix the track numbers
   * `Ctrl-shift-i` or Click the Web Source (quick) button
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
-  * `Ctrl-k` Set/fix the track numbers
   * `Alt-1` or click the Tag-Filename button
 ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename") To set the filename and folder structure  
      * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`  
