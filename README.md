@@ -6,7 +6,7 @@ A walkthrough for optimal Audiobook experience using Plex
   * Restart Plex
   * Access WebTools at this URL  
     * `http://<your IP address here>:33400/`
-* Install the [Audiobook Metadata Agent](https://github.com/seanap/Audiobooks.bundle)
+* Install the [Audiobook Metadata Agent](https://github.com/seanap/Audiobooks.bundle) using WebTools
   * In the WebTools page Click `UAS`
   * Enter the following Manual Installation URL
     * `https://github.com/seanap/Audiobooks.bundle`
