@@ -1,33 +1,6 @@
 # Plex-Audiobook-Guide
 A walkthrough for optimal Audiobook experience using Plex
 
-### Configure Mp3tag
-* Install [Mp3tag](https://www.mp3tag.de/en/)
-* Install the Audible custom web sources  
-  * [Guide](https://github.com/seanap/Audible.com-Search-by-Album)
-* Configure `Tag-Filename` button ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
- * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`
-* Configure `Filename-Tag` button ![alt text](https://i.imgur.com/BE25NFp.png "Filename-Tag")  
- * `Format String = %title%`
-* Cofigure `Tag Panel` Under `Tools>Options`
-  ![alt text](https://i.imgur.com/ERv9n8G.png "Tag Panel")
-* Configure meaningful user-defined Genres under `Tools>Options`  
-  ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")
-
-### Clean up File & Folder names  
-* [Mp3tag](https://github.com/seanap/Audible.com-Search-by-Album)  
-  * Once the `Audible.com#Search by Album.src` file is in your `%appdata%\mp3tag\data\sources` folder.
-  * Pull and set the tags
-![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
-  * Set/fix the track numbers by hitting `ctrl-k`
-  * Then set the filename and folder structure by clicking the Tag-Filename button
-![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
-     * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`  
-* Copy Cover Art into the folder with your audio files (*Required for Booksonic*)
-  * Use the Quick Action button ![alt text](https://i.imgur.com/UMueLqS.png "Quick Actions") to `Export cover to file`  
-  ![alt text](https://i.imgur.com/vAxejs8.png "Quick Action - Cover to folder")
-  * Alternatively, Drag and drop cover from mp3tag into Folder
-
 ### Install Metadata Agent for Plex
 * Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
   * Restart Plex
@@ -56,6 +29,33 @@ A walkthrough for optimal Audiobook experience using Plex
    * Genres - Embedded tags
    * Album Art - Local Files Only
    * Agent - Audiobooks
+   
+### Configure Mp3tag
+* Install [Mp3tag](https://www.mp3tag.de/en/)
+* Install the Audible custom web sources  
+  * [Guide](https://github.com/seanap/Audible.com-Search-by-Album)
+* Configure `Tag-Filename` button ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
+ * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`
+* Configure `Filename-Tag` button ![alt text](https://i.imgur.com/BE25NFp.png "Filename-Tag")  
+ * `Format String = %title%`
+* Cofigure `Tag Panel` Under `Tools>Options`
+  ![alt text](https://i.imgur.com/ERv9n8G.png "Tag Panel")
+* Configure meaningful user-defined Genres under `Tools>Options`  
+  ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")
+
+### Clean up File & Folder names  
+* [Mp3tag](https://github.com/seanap/Audible.com-Search-by-Album)  
+  * Once the `Audible.com#Search by Album.src` file is in your `%appdata%\mp3tag\data\sources` folder.
+  * Pull and set the tags
+![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
+  * Set/fix the track numbers by hitting `ctrl-k`
+  * Then set the filename and folder structure by clicking the Tag-Filename button
+![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
+     * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`  
+* Copy Cover Art into the folder with your audio files (*Required for Booksonic*)
+  * Use the Quick Action button ![alt text](https://i.imgur.com/UMueLqS.png "Quick Actions") to `Export cover to file`  
+  ![alt text](https://i.imgur.com/vAxejs8.png "Quick Action - Cover to folder")
+  * Alternatively, Drag and drop cover from mp3tag into Folder   
 
 ### Notes
 Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless.  I typically wait till I have a few Audiobooks in the que before tagging and archiving.  
