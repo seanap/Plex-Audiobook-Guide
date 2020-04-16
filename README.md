@@ -41,10 +41,10 @@ A walkthrough for optimal Audiobook experience using Plex
 * Load a test file in Mp3tag, and select a track
   * Click the Web Sources drop down button, select Audible.com > Search by Album
    ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
-  * Configure `Tag-Filename` button ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")  
-   * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`
-  * Configure `Filename-Tag` button ![alt text](https://i.imgur.com/BE25NFp.png "Filename-Tag")  
-   * `Format String = %title%`
+  * Configure `Tag-Filename` button ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")
+    * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`
+  * Configure `Filename-Tag` button ![alt text](https://i.imgur.com/BE25NFp.png "Filename-Tag")
+    * `Format String = %title%`
 
 ### Clean up File & Folder names  
 * Drag un-tagged audiobook into Mp3tag
