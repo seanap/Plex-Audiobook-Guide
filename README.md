@@ -1,5 +1,5 @@
 # Plex Audiobook Guide
-A walkthrough for optimal Audiobook experience using Plex
+A walkthrough for optimal Audiobook experience using Plex.  This guide assumes you have Plex Media Server installed already.
 
 ### Install Metadata Agent for Plex
 * Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
