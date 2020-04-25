@@ -22,29 +22,38 @@ A walkthrough for optimal Audiobook experience using Plex.  This guide assumes y
  * **General** select `Music`
  * **Add folders** browse to your Audiobook folders
  * **Advanced** set the following:  
-   * Album sorting - Oldest first
+   * Album sorting - By Name (This uses the Albumsort tag to keep series together and in order)
    * *UNCHECK* Prefer Local Metadata
    * *CHECK* Store track progress
    * *UNCHECK* Popular Tracks
    * Genres - Embedded tags
    * Album Art - Local Files Only
    * Agent - Audiobooks
-   
+
 ### Configure Mp3tag
 * Install [Mp3tag](https://www.mp3tag.de/en/)
 * Install the Audible custom web sources  
   * [Guide](https://github.com/seanap/Audible.com-Search-by-Album)
-* Cofigure `Tag Panel` Under `Tools>Options`
-  ![alt text](https://i.imgur.com/ERv9n8G.png "Tag Panel")
+* Cofigure `Tag Panel` Under `Tools>Options`  
+  Note: **CAPITAL** names are the bare essentials  
+  Names that start with **#** are custom tags, only used by mp3tag
+  ![alt text](https://i.imgur.com/wHdZcHh.png "Tag Panel")
 * Configure meaningful user-defined Genres under `Tools>Options`  
   ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")
+* Create a Rename and Move Cover Actions
+  * Click the Actions menu, select Actions (or `Alt-6`)
+  * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)
+  * Add a New Action `Format Value`
+   * Field = `_FILENAME`
+   * Format String = `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) '['%series% %series-part%']'- pt$num(%track%,2)`
+  * Add a New Action `Export Cover to File`
+   * Format String = `%album% (%year%) ['['%series% %series-part%']' ]- cover`
+   ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
 * Load a test file in Mp3tag, and select a track
   * Click the Web Sources drop down button, select Audible.com > Search by Album
    ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
-  * Configure `Tag-Filename` button ![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename")
-    * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`
-  * Configure `Filename-Tag` button ![alt text](https://i.imgur.com/BE25NFp.png "Filename-Tag")
-    * `Format String = %title%`
+  * Click the Action drop down button, select your new Action  
+  ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
 
 ### Clean up File & Folder names  
 * Drag un-tagged audiobook into Mp3tag
@@ -52,17 +61,16 @@ A walkthrough for optimal Audiobook experience using Plex.  This guide assumes y
   * `Ctrl-k` Set/fix the track numbers
   * `Ctrl-shift-i` or Click the Web Source (quick) button
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
-  * `Alt-1` or click the Tag-Filename button
-![alt text](https://i.imgur.com/KJGD4sE.png "Tag-Filename") To set the filename and folder structure  
-     * `Format String = C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) - pt$num(%track%,2)`  
-* Copy Cover Art into the folder with your audio files (*Required for Booksonic*)
-  * `Alt-Shift-6` or Click the Quick Action button ![alt text](https://i.imgur.com/UMueLqS.png "Quick Actions") and `Export cover to file`  
-  ![alt text](https://i.imgur.com/vAxejs8.png "Quick Action - Cover to folder")  
+  * Click the Action drop down button, select your  Action  
+  ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
 
 ### Notes
 Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless.  I typically wait till I have a few Audiobooks in the que before tagging and archiving.  
 
-   I set up an AutoHotKey that opens 4 windows in quadrants on my screen: Untagged Source Folder, Temp working folder, mp3tag, and goodreads.com (in case I need to look up metadata not on Audible).
+I set up three different actions to use depending on the number of tracks of the book.  
+For a single track I removed the `-pt$num(%track%,2)` from the end of the filename Format Value.  
+For 2-99 tracks, use the 01 Action from the example above it will add `-pt01` to the end of the filename.  
+For 100-999 tracks create the 001 Action by duplicating the 01 Action and editing the Format Value string to `-pt$num(%track%,3)` which will append `-pt001` to the end of the track.
 
    Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure, Booksonic exclusively uses folder structure and cover.jpg files for it's organization.
 
