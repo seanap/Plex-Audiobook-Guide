@@ -44,10 +44,10 @@ A walkthrough for optimal Audiobook experience using Plex.  This guide assumes y
   * Click the Actions menu, select Actions (or `Alt-6`)
   * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)
   * Add a New Action `Format Value`
-   * Field = `_FILENAME`
-   * Format String = `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) '['%series% %series-part%']'- pt$num(%track%,2)`
+    * Field = `_FILENAME`
+    * Format String = `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) '['%series% %series-part%']'- pt$num(%track%,2)`
   * Add a New Action `Export Cover to File`
-   * Format String = `%album% (%year%) ['['%series% %series-part%']' ]- cover`
+    * Format String = `%album% (%year%) ['['%series% %series-part%']' ]- cover`
    ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
 * Load a test file in Mp3tag, and select a track
   * Click the Web Sources drop down button, select Audible.com > Search by Album
