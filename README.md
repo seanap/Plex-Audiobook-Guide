@@ -30,17 +30,37 @@ A walkthrough for optimal Audiobook experience using Plex.  This guide assumes y
    * Album Art - Local Files Only
    * Agent - Audiobooks
 
+### Automatically copy original files to a temp processing folder
+Optional: This step is only if you want to preserve the original unedited Audiobook files.  I have 3 working directories for my Audiobooks:
+* `~/Original` Folder where I keep the un-altered original audio Files
+* `~/temp` Folder where I copy the audio files that need to be processed
+* `~/Audiobooks` Folder where I archive my properly tagged files in the proper folder Structure
+##### Create the Copy script
+* Create a new file and name it `BookCopy.sh`  
+` #!/bin/sh`  
+`find /path/to/Original/* -type f -mmin -1 -exec cp -a "{}" /path/to/temp \; `
+* Edit cron `crontab -e` add the following line:  
+`* * * * * /bin/sh /path/to/BookCopy.sh`  
+
+This script will check every 1min for a new audiobook in the `~/Original` folder. It will then copy the new file/folder to the `~/temp` folder. We will configure Mp3tag to open to the `~/temp` folder by default.  Once you run the custom Action created below, Mp3tag will move the files from `~/temp` to `~/Audiobook`.  Once you are done tagging and renaming the books you only need to clean up any empty folders left in `~/temp`.
+
 ### Configure Mp3tag
 * Install [Mp3tag](https://www.mp3tag.de/en/)
 * Install the Audible custom web sources  
   * [Guide](https://github.com/seanap/Audible.com-Search-by-Album)
-* Cofigure `Tag Panel` Under `Tools>Options`  
+* Set the default folder Mp3tag opens to in `Tools > Options > Directories` check `start from this directory`  
+![alt text](https://i.imgur.com/R2lh1YH.png "Default Directory")  
+
+
+* Cofigure `Tag Panel` Under `Tools > Options`  
   Note: **CAPITAL** names are the bare essentials  
   Names that start with **#** are custom tags, only used by mp3tag
   ![alt text](https://i.imgur.com/wHdZcHh.png "Tag Panel")
 * Configure meaningful user-defined Genres under `Tools>Options`  
   ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")
-* Create a Rename and Move Cover Actions
+
+
+* Create a Rename and Move Cover Actions  
   * Click the Actions menu, select Actions (or `Alt-6`)
   * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)
   * Add a New Action `Format Value`
@@ -49,15 +69,15 @@ A walkthrough for optimal Audiobook experience using Plex.  This guide assumes y
   * Add a New Action `Export Cover to File`
     * Format String = `%album% (%year%) ['['%series% %series-part%']' ]- cover`
    ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
-* Load a test file in Mp3tag, and select a track
+* Load a test file in Mp3tag, and select a track, to make sure everything is working
   * Click the Web Sources drop down button, select Audible.com > Search by Album
    ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
   * Click the Action drop down button, select your new Action  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
 
 ### Clean up File & Folder names  
-* Drag un-tagged audiobook into Mp3tag
-  * `Ctrl-a` Select All
+* Load un-tagged audiobook into Mp3tag
+  * `Ctrl-a` or, Select All tracks of the Audiobook
   * `Ctrl-k` Set/fix the track numbers
   * `Ctrl-shift-i` or Click the Web Source (quick) button
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
