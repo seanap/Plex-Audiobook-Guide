@@ -42,7 +42,7 @@ Optional: This step is only if you want to preserve the original unedited Audiob
 * Edit cron `crontab -e` add the following line:  
 `*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
 
-This script will check every 1min for a new audiobook in the `~/Original` folder. It will then copy the new file/folder to the `~/temp` folder. We will configure Mp3tag to open to the `~/temp` folder by default.  Once you run the custom Action created below, Mp3tag will move the files from `~/temp` to `~/Audiobook`.  Once you are done tagging and renaming the books you only need to clean up any empty folders left in `~/temp`.
+This script will check every 2min for a new audiobook in the `~/Original` folder. It will then copy the new file/folder to the `~/temp` folder. We will configure Mp3tag to open to the `~/temp` folder by default.  Once you run the custom Action created below, Mp3tag will move the files from `~/temp` to `~/Audiobook`.  Once you are done tagging and renaming the books you only need to clean up any empty folders left in `~/temp`.
 
 ### Configure Mp3tag
 * Install [Mp3tag](https://www.mp3tag.de/en/)
@@ -109,7 +109,7 @@ For a single track I removed the `-pt$num(%track%,2)` from the end of the filena
 For 2-99 tracks, use the 01 Action from the example above it will add `-pt01` to the end of the filename.  
 For 100-999 tracks create the 001 Action by duplicating the 01 Action and editing the Format Value string to `-pt$num(%track%,3)` which will append `-pt001` to the end of the track.
 
-   Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure, Booksonic exclusively uses folder structure and cover.jpg files for it's organization.
+   Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure, Booksonic exclusively uses folder structure for it's orgaization and looks for cover.jpg/desc.txt/reader.txt files for additional metadata.
 
    If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
 
