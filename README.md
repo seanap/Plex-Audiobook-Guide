@@ -85,7 +85,7 @@ This script will check every 1min for a new audiobook in the `~/Original` folder
 
   Your New Action should look like this:  
     ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
-    ![alt text](https://i.imgur.com/IDSdSoR.png "Custom Action Sequence")
+    ![alt text](https://i.imgur.com/kmOiNqc.png "Custom Action Sequence")
 * Load a test file in Mp3tag, and select a track, to make sure everything is working
   * Click the Web Sources drop down button, select Audible.com > Search by Album
    ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
