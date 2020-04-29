@@ -38,9 +38,9 @@ Optional: This step is only if you want to preserve the original unedited Audiob
 ##### Create the Copy script
 * Create a new file and name it `BookCopy.sh`  
 ` #!/bin/sh`  
-`find /path/to/Original/* -type f -mmin -1 -exec cp -a "{}" /path/to/temp \; `
+`find /path/to/Original/* -type f -mmin -2 -exec cp -a "{}" /path/to/temp \; `
 * Edit cron `crontab -e` add the following line:  
-`* * * * * /bin/sh /path/to/BookCopy.sh`  
+`*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
 
 This script will check every 1min for a new audiobook in the `~/Original` folder. It will then copy the new file/folder to the `~/temp` folder. We will configure Mp3tag to open to the `~/temp` folder by default.  Once you run the custom Action created below, Mp3tag will move the files from `~/temp` to `~/Audiobook`.  Once you are done tagging and renaming the books you only need to clean up any empty folders left in `~/temp`.
 
