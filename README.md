@@ -60,7 +60,7 @@ This script will check every 1min for a new audiobook in the `~/Original` folder
   ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")
 
 
-* Create a Rename and Move Cover Actions  
+* Create a Rename, Proper Folder Structure, and Export Cover/desc.txt/reader.txt Action  
   * Click the Actions menu, select Actions (or `Alt-6`)
   * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)
   * Add a New Action `Format Value`
@@ -68,7 +68,24 @@ This script will check every 1min for a new audiobook in the `~/Original` folder
     * Format String = `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) '['%series% %series-part%']'- pt$num(%track%,2)`
   * Add a New Action `Export Cover to File`
     * Format String = `%album% (%year%) ['['%series% %series-part%']' ]- cover`
-   ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
+  * Add a New Action `Export`
+    * Click `New`
+    * Label it `desc`
+    * Edit the `desc.mte` file to only include the following two lines:
+      * `$filename(desc.txt,utf-8)`  
+        `%comment%`
+    * Save `desc.mte`, verify that the filename is desc.txt, and click OK
+  * Add New Action `Export`
+    * Click `New`
+    * Label it `reader`
+    * Edit the `reader.mte` file to only include the following two lines:
+      * `$filename(reader.txt,utf-8)`  
+        `%composer%`
+    * Save `reader.mte`, verify that the filename is reader.txt, and click OK  
+
+  Your New Action should look like this:  
+    ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
+    ![alt text](https://i.imgur.com/IDSdSoR.png "Custom Action Sequence")
 * Load a test file in Mp3tag, and select a track, to make sure everything is working
   * Click the Web Sources drop down button, select Audible.com > Search by Album
    ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
