@@ -74,18 +74,23 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
     * Edit the `desc.mte` file to only include the following two lines:
       * `$filename(desc.txt,utf-8)`  
         `%comment%`
-    * Save `desc.mte`, verify that the filename is desc.txt, and click OK
+    * Save `desc.mte`
+    * Set `Export File Name:` as:
+      * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\desc.txt`
   * Add New Action `Export`
     * Click `New`
     * Label it `reader`
     * Edit the `reader.mte` file to only include the following two lines:
       * `$filename(reader.txt,utf-8)`  
         `%composer%`
-    * Save `reader.mte`, verify that the filename is reader.txt, and click OK  
+    * Save `reader.mte`
+    * Set `Export File Name:` as:
+      * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\reader.txt`
 
   Your New Action should look like this:  
     ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
     ![alt text](https://i.imgur.com/kmOiNqc.png "Custom Action Sequence")
+    ![alt text](https://i.imgur.com/aqknlqM.png "Filename format")
 * Load a test file in Mp3tag, and select a track, to make sure everything is working
   * Click the Web Sources drop down button, select Audible.com > Search by Album
    ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
