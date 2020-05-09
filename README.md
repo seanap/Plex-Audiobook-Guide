@@ -60,10 +60,10 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
   Names that start with **#** are custom tags, only used by mp3tag
   ![alt text](https://i.imgur.com/wHdZcHh.png "Tag Panel")
 * Configure meaningful user-defined Genres under `Tools>Options`  
-  ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")
+  ![alt text](https://i.imgur.com/YXnh7ve.png "User-defined Genres")    
 
 
-* Create a Rename, Proper Folder Structure, and Export Cover/desc.txt/reader.txt Action  
+##### Create a custom Action that will Rename, Proper Folder Structure, and Export cover/desc/reader
   * Click the Actions menu, select Actions (or `Alt-6`)
   * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)
   * Add a New Action `Format Value`
@@ -100,8 +100,8 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
   * Click the Action drop down button, select your new Action  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
 
-### Clean up File & Folder names  
-* Load un-tagged audiobook into Mp3tag
+### Workflow: Clean up File & Folder names  
+* Open Mp3tag
   * `Ctrl-a` or, Select All tracks of the Audiobook
   * `Ctrl-k` Set/fix the track numbers
   * `Ctrl-shift-i` or Click the Web Source (quick) button
@@ -110,12 +110,13 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
 
 ### Notes
-Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless.  I typically wait till I have a few Audiobooks in the que before tagging and archiving.  
+Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless.  
 
-I set up three different actions to use depending on the number of tracks of the book.  
-For a single track I removed the `-pt$num(%track%,2)` from the end of the filename Format Value.  
-For 2-99 tracks, use the 01 Action from the example above it will add `-pt01` to the end of the filename.  
-For 100-999 tracks create the 001 Action by duplicating the 01 Action and editing the Format Value string to `-pt$num(%track%,3)` which will append `-pt001` to the end of the track.
+I set up three different actions to use depending on the number of tracks of the book;  
+* For a single track I removed the `-pt$num(%track%,2)` from the end of the filename Format Value.  
+* For 2-99 tracks, use the 01 Action from the example above it will append `-pt01` to the end of the filename.  
+* For 100-999 tracks create the 001 Action by duplicating the 01 Action and editing the Format Value string to `-pt$num(%track%,3)` which will append `-pt001` to the end of the track.  
+
 
    Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure, Booksonic exclusively uses folder structure for it's orgaization and looks for cover.jpg/desc.txt/reader.txt files for additional metadata.
 
