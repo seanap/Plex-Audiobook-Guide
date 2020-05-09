@@ -32,17 +32,20 @@ A walkthrough for optimal Audiobook experience using Plex.  This guide assumes y
 
 ### Automatically copy original files to a temp processing folder
 Optional: This step is only if you want to preserve the original unedited Audiobook files.  I have 3 working directories for my Audiobooks:
-* `~/Original` Folder where I keep the un-altered original audio Files
-* `~/temp` Folder where I copy the audio files that need to be processed
-* `~/Audiobooks` Folder where I archive my properly tagged files in the proper folder Structure
+* `~/Original` Folder where I keep the un-altered original audio Files  
+* `~/temp` Folder where I copy the audio files that need to be processed  
+* `~/Audiobooks` Folder where I archive my properly tagged files in the proper folder Structure  
+
 ##### Create the Copy script
 * Create a new file and name it `BookCopy.sh`  
-` #!/bin/sh`  
-`find /path/to/Original/* -type f -mmin -2 -exec cp -a "{}" /path/to/temp \; `
+`#!/bin/sh`  
+`cd ~/Original`  
+`find ./ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg -o -iname \*.pdf -o -iname \*.epub -o -iname \*.azw -o -iname \*.azw3 -o -iname \*.azw4 -o -iname \*.doc -o -iname \*.docx -o -iname \*.m4v -o -iname \*.djvu -o -iname \*.opf -o -iname \*.odt -o -iname \*.PDX -o -iname \*.wav -o -iname \*.mobi -o -iname \*.xls \) -mmin -2 -exec cp -n "{}" ~/temp/ \;`  
+
 * Edit cron `crontab -e` add the following line:  
 `*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
 
-This script will check every 2min for a new audiobook in the `~/Original` folder. It will then copy the new file/folder to the `~/temp` folder. We will configure Mp3tag to open to the `~/temp` folder by default.  Once you run the custom Action created below, Mp3tag will move the files from `~/temp` to `~/Audiobook`.  Once you are done tagging and renaming the books you only need to clean up any empty folders left in `~/temp`.
+This script will check every 2min for a new audiobook in the `~/Original` folder. It will then copy the new files to the `~/temp` folder. We will configure Mp3tag to open to the `~/temp` folder by default.  Then when you run the Mp3tag custom Action (created below), Mp3tag will move the files from `~/temp` to `~/Audiobook`.  
 
 ### Configure Mp3tag
 * Install [Mp3tag](https://www.mp3tag.de/en/)
