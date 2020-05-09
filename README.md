@@ -1,4 +1,4 @@
-# Plex Audiobook Guide
+# Plex & Booksonic Audiobook Guide
 A walkthrough for optimal Audiobook experience using Plex.  This guide assumes you have Plex Media Server installed already.
 
 ### Install Metadata Agent for Plex
