@@ -1,3 +1,2 @@
 #!/bin/sh
-cd ~/original
-find ./ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg -o -iname \*.pdf -o -iname \*.epub -o -iname \*.azw -o -iname \*.azw3 -o -iname \*.azw4 -o -iname \*.doc -o -iname \*.docx -o -iname \*.m4v -o -iname \*.djvu -o -iname \*.opf -o -iname \*.odt -o -iname \*.PDX -o -iname \*.wav -o -iname \*.mobi -o -iname \*.xls \) -mmin -2 -exec cp -n "{}" ~/temp \;
+find /storage/seeding/qbittorrentAB/complete/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg -o -iname \*.pdf -o -iname \*.epub -o -iname \*.azw -o -iname \*.azw3 -o -iname \*.azw4 -o -iname \*.doc -o -iname \*.docx -o -iname \*.m4v -o -iname \*.djvu -o -iname \*.opf -o -iname \*.odt -o -iname \*.PDX -o -iname \*.wav -o -iname \*.mobi -o -iname \*.xls \) -mmin -2 -exec cp -n "{}" /storage/temp/BooksToProcess \;
