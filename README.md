@@ -1,4 +1,4 @@
-# Plex & Booksonic Audiobook Guide
+# Plex Audiobook Guide
 A walkthrough for optimal Audiobook experience using Plex.  This guide assumes you have Plex Media Server installed already.
 
 ### Install Metadata Agent for Plex
@@ -39,8 +39,7 @@ Optional: This step is only if you want to preserve the original unedited Audiob
 ##### Create the Copy script
 * Create a new file and name it `BookCopy.sh`  
 `#!/bin/sh`  
-`cd ~/Original`  
-`find ./ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg -o -iname \*.pdf -o -iname \*.epub -o -iname \*.azw -o -iname \*.azw3 -o -iname \*.azw4 -o -iname \*.doc -o -iname \*.docx -o -iname \*.m4v -o -iname \*.djvu -o -iname \*.opf -o -iname \*.odt -o -iname \*.PDX -o -iname \*.wav -o -iname \*.mobi -o -iname \*.xls \) -mmin -2 -exec cp -n "{}" ~/temp/ \;`  
+`find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg -o -iname \*.pdf -o -iname \*.epub -o -iname \*.azw -o -iname \*.azw3 -o -iname \*.azw4 -o -iname \*.doc -o -iname \*.docx -o -iname \*.m4v -o -iname \*.djvu -o -iname \*.opf -o -iname \*.odt -o -iname \*.PDX -o -iname \*.wav -o -iname \*.mobi -o -iname \*.xls \) -mmin -2 -exec cp -n "{}" /full/path/to/temp/ \;`  
 
 * Edit cron `crontab -e` add the following line:  
 `*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
@@ -117,8 +116,9 @@ I set up three different actions to use depending on the number of tracks of the
 * For 2-99 tracks, use the 01 Action from the example above it will append `-pt01` to the end of the filename.  
 * For 100-999 tracks create the 001 Action by duplicating the 01 Action and editing the Format Value string to `-pt$num(%track%,3)` which will append `-pt001` to the end of the track.  
 
-Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure, Booksonic exclusively uses folder structure for it's orgaization and looks for cover.jpg/desc.txt/reader.txt files for additional metadata.
 
-If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
+   Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure, Booksonic exclusively uses folder structure for it's orgaization and looks for cover.jpg/desc.txt/reader.txt files for additional metadata.
 
-For Android devices, I actually gave up on using the Plex app after it constantly kept loosing my place, marked the book as finished at 90%, and doesn't record the watch status. I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart, but it's a step in the right direction.
+   If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
+
+   For Android devices, I actually gave up on using the Plex app after it constantly kept loosing my place, marked the book as finished at 90%, and doesn't record the watch status. I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart, but it's a step in the right direction.
