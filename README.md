@@ -39,7 +39,7 @@ Optional: This step is only if you want to preserve the original unedited Audiob
 ##### Create the Copy script
 * Create a new file and name it `BookCopy.sh`  
 `#!/bin/sh`  
-`find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg -o -iname \*.pdf -o -iname \*.epub -o -iname \*.azw -o -iname \*.azw3 -o -iname \*.azw4 -o -iname \*.doc -o -iname \*.docx -o -iname \*.m4v -o -iname \*.djvu -o -iname \*.opf -o -iname \*.odt -o -iname \*.PDX -o -iname \*.wav -o -iname \*.mobi -o -iname \*.xls \) -mmin -2 -exec cp -n "{}" /full/path/to/temp/ \;`  
+`find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg -o -iname \*.pdf -o -iname \*.epub -o -iname \*.azw -o -iname \*.azw3 -o -iname \*.azw4 -o -iname \*.doc -o -iname \*.docx -o -iname \*.m4v -o -iname \*.djvu -o -iname \*.opf -o -iname \*.odt -o -iname \*.PDX -o -iname \*.wav -o -iname \*.mobi -o -iname \*.xls \) -mmin -3 -exec cp -n "{}" /full/path/to/temp/ \;`  
 
 * Edit cron `crontab -e` add the following line:  
 `*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
