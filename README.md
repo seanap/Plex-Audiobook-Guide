@@ -101,9 +101,10 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
    ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
 
    #### Tips!
-   * The script searches using the Album + Artist tag, if there are no results you can change these tags to something more search friendly, or you can look up the book at Audible.com and find the ASIN for the book in the addressbar and use that to search in the script.  
-   * If the Author is also the Narrator make sure you delete the duplicate entry in the Artist field.  The script automatically combines these for the Artist tag, which is used as a "Artists on this track".
-   * Try to only keep 1 cover file in the tag, when the script asks if you want to save the existing cover, say "No".  If you happen to like the included cover over Audibles, in the Tag Review screen you can click the "Utils" button (bottom left) and UNCHECK "Save Image to Tag", but make sure you remember to recheck this on the next book.  
+    * The script searches using the Album + Artist tag, if there are no results you can change these tags to something more search friendly, or you can look up the book at Audible.com and find the ASIN for the book in the addressbar and use that to search in the script.  
+    * If the Author is also the Narrator make sure you delete the duplicate entry in the Artist field.  The script automatically combines these for the Artist tag, which is used as a "Artists on this track".  
+    * Try to only keep 1 cover file in the tag, when the script asks if you want to save the existing cover, say "No".  If you happen to like the included cover over Audibles, in the Tag Review screen you can click the "Utils" button (bottom left) and UNCHECK "Save Image to Tag", but make sure you remember to recheck this on the next book.  
+
   * Click the Action drop down button, select your new Action  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
 
