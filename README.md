@@ -62,7 +62,8 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
 ![alt text](https://i.imgur.com/R2lh1YH.png "Default Directory")  
 
 
-* Cofigure `Tag Panel` Under `Tools > Options`  
+* Cofigure `Tag Panel` by downloading [usrfields.ini](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/Scripts/usrfields.ini) and putting it in your `\%appdata%\roaming\Mp3tag\data` folder
+  * This can be manually adjusted Under `Tools > Options > Tag Panel`  
   ![alt text](https://i.imgur.com/wHdZcHh.png "Tag Panel")
 
 ##### Create a custom Action that will Rename, Proper Folder Structure, and Export cover/desc/reader
