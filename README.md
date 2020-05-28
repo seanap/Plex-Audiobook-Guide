@@ -72,7 +72,7 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
   * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)
   * Add a New Action `Format Value`
     * Field = `_FILENAME`
-    * Format String = `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\%album% (%year%) '['%series% %series-part%']'- pt$num(%track%,2)`
+    * Format String = `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\%album% (%year%) ['['%series% %series-part%']' ]- pt$num(%track%,2)`
   * Add a New Action `Export Cover to File`
     * Format String = `%album% (%year%) ['['%series% %series-part%']' ]- cover`
   * Add a New Action `Export`
@@ -83,7 +83,7 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
         `%comment%`
     * Save `desc.mte`
     * Set `Export File Name:` as:
-      * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\desc.txt`
+      * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\desc.txt`
   * Add New Action `Export`
     * Click `New`
     * Label it `reader`
@@ -92,7 +92,7 @@ This script will check every 2min for a new audiobook in the `~/Original` folder
         `%composer%`
     * Save `reader.mte`
     * Set `Export File Name:` as:
-      * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%\reader.txt`
+      * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\reader.txt`
 
   Your New Action should look like this:  
     ![alt text](https://i.imgur.com/SiRhEdU.png "Example Actions")
