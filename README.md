@@ -9,6 +9,8 @@ Show as much metadata as possible in Plex &amp; Booksonic.  This will let you f
 
 ![alt text](https://i.imgur.com/oSfZLHo.png "Booksonic Book Summary")  
 
+![alt text](https://i.imgur.com/nVqSlWq.png "Tags") 
+
 ### Install Metadata Agent for Plex
 * Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
   * Restart Plex
