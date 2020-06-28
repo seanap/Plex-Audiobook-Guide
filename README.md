@@ -51,8 +51,6 @@ Optional: This step is only if you want to preserve the original unedited Audiob
 * Edit cron `crontab -e` add the following line:  
 `*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
 
-This script will check every 2min for a new audiobook in the `~/Original` folder. It will then copy the new files to the `~/temp` folder. We will configure Mp3tag to open to the `~/temp` folder by default.  Then when you run the Mp3tag custom Action (created below), Mp3tag will move the files from `~/temp` to `~/Audiobook`.  
-
 ### Configure Mp3tag
 * Install [Mp3tag](https://www.mp3tag.de/en/)
 * Install the Audible custom web sources  
