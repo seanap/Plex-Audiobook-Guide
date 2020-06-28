@@ -3,9 +3,11 @@ I've seen a lot of interest about this topic, this is my process for getting the
 
 ### Goal
 Show as much metadata as possible in Plex &amp; Booksonic.  This will let you filter by Narrator, Author, Genre, Year, Series, Rating, Publisher, etc.  Show all album cover art and Summary's. Make the organizing and tagging as quick and painless as possible.  
-![alt text](https://i.imgur.com/C3wgGte.png "Author Page")  
+![alt text](https://i.imgur.com/C3wgGte.png "Plex Author Page")  
 
-![alt text](https://i.imgur.com/YHqhdhO.png "Book Summary")  
+![alt text](https://i.imgur.com/YHqhdhO.png "Plex Book Summary")  
+
+![alt text](https://i.imgur.com/oSfZLHo.png "Booksonic Book Summary")  
 
 ### Install Metadata Agent for Plex
 * Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
