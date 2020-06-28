@@ -1,4 +1,4 @@
-# Plex Audiobook Guide
+# Plex & Booksonic Audiobook Guide
 I've seen a lot of interest about this topic, this is my process for getting the most metadata into Plex in the least amount of time.  I'll be doing a deep dive into some advanced features of the tools available to us in order to get a nice, clean, and functional UI while saving hundreds of hours of manual, tedious, data entry.  This walkthrough is specifically for optimal Audiobook experience using Plex, which in it's current state only quasi-supports audiobooks. This guide assumes you have Plex Media Server, and/or Booksonic, installed already.  This guide is meant to serve as a framework for fully utilizing metadata.  Everything is customizable, and easy to change.
 
 ### Goal
