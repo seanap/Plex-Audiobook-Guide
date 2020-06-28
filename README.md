@@ -64,7 +64,7 @@ Optional: This step is only if you want to preserve the original unedited Audiob
   * This can be manually adjusted Under `Tools > Options > Tag Panel`  
   ![alt text](https://i.imgur.com/wHdZcHh.png "Tag Panel")
 
-##### Create a custom Action that will Rename, Proper Folder Structure, and Export cover/desc/reader
+### Create a custom Action that will Rename, Proper Folder Structure, and Export cover/desc/reader
   * Load a test audiobook file in Mp3tag, and select it
   * Click the Actions menu, select Actions (or `Alt-6`)
   * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)
