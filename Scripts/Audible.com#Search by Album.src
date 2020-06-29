@@ -5,6 +5,7 @@
 # 2013-09-20: Updated
 # 2020-03-24: Updated
 # 2020-04-06: Updated to Audible.com
+# 2020-06-28: Updated to region independent (u/Carlyone)
 #
 # This file should be in your sources dir. %appdata%\roaming\mp3tag\data\sources
 # On Windows XP it's C:\Documents and Settings\*username*\Application Data\Mp3tag\data\sources
@@ -14,7 +15,7 @@
 
 [Name]=Audible.com
 [BasedOn]=www.audible.com
-[IndexUrl]=https://www.audible.com/search?keywords=
+[IndexUrl]=https://www.audible.com/search?ipRedirectOverride=true&overrideBaseCountry=true&keywords=
 [AlbumUrl]=https://www.audible.com
 [WordSeperator]=+
 [IndexFormat]=%_url%|%Album%|%Author%|%Duration%|%Year%|%Language%
@@ -26,10 +27,8 @@
 # ###################################################################
 #					I  N  D  E  X
 # ###################################################################
-DebugWriteInput #"C:\Users\%user%\Desktop\mp3tag.html"
-Debug "ON" #"C:\Users\%user%\Desktop\mp3tagdebug.txt"
-
-
+#DebugWriteInput #"C:\Users\%user%\Desktop\mp3tag.html"
+#Debug "ON" #"C:\Users\%user%\Desktop\mp3tagdebug.txt"
 
 joinuntil "</html>"
 regexpreplace "[\r\n]+" ""
@@ -48,7 +47,8 @@ findinline "<h3 class=\"bc-heading"
 do	
 	#  Url		
 	findinline "href=\""
-	sayuntil "\""
+	sayuntil "?"
+	say "?ipRedirectOverride=true&overrideBaseCountry"
 	say "|"
 	
 	# Album
@@ -185,7 +185,7 @@ if "seriesLabel"
 	sayuntil "<"
 	outputto "series-part"
 	findinline "a>, Book " 1 1
-	SayRegexp "^[.?\d]+$"
+	SayRegexp "^[.?\d]+(?=,|$)"
 	outputto "Albumsort"
 	sayoutput "series"
 	say " "
