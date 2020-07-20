@@ -9,7 +9,7 @@ Show as much metadata as possible in Plex &amp; Booksonic.  This will let you f
 
 ![alt text](https://i.imgur.com/oSfZLHo.png "Booksonic Book Summary")  
 
-![alt text](https://i.imgur.com/nVqSlWq.png "Tags") 
+![alt text](https://i.imgur.com/nVqSlWq.png "Tags")
 
 ### Install Metadata Agent for Plex
 * Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
@@ -143,11 +143,16 @@ I did a lot of digging into ID3 standards and this was the best way I could come
 | `ASIN` (ASIN)          | Amazon Standard Identification Number |
 | `POPM` (RATING WMP)    | Audible Rating   |
 | `WOAF` (WWWAUDIOFILE)  | Audible Album URL|
-| `CoverUrl`             | Album Cover Art  |
+| `stik` (ITUNESMEDIATYPE) | M4B Media type = Audiobook |
+| `pgap` (ITUNESGAPLESS) | M4B Gapless album = 1 |
+| 'shwm' SHOWMOVEMENT    | Show Movement (M4B), if Series then = 1 else blank|
+| `MVNM` MOVEMENTNAME    | Series           |
+| `MVIN` MOVEMENT        | Series Book #    |
 | `TXXX` (SERIES)**      | Series           |
 | `TXXX` (SERIES-PART)** | Series Book #    |
-| `TXXX` (TMP_GENRE1) | Genre 1 |
-| `TXXX` (TMP_GENRE2) | Genre 2 |
+| `TXXX` (TMP_GENRE1)    | Genre 1 |
+| `TXXX` (TMP_GENRE2)    | Genre 2 |
+| `CoverUrl`             | Album Cover Art  |
 | `TIT2` (TITLE)         | Not Scraped, but used for Chapter Title<br>If no chapter data available set to filename |
    >&ast;*I would prefer Original Pub. year, but Audible is really bad at providing this data*  
    >&ast;&ast;*Custom Tags used as placeholders, To view this tag Tools>Options>Tag Panel>New*
