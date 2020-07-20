@@ -179,6 +179,8 @@ sayrest
 findline "seriesLabel" 1 1
 unspace
 if "seriesLabel"
+	outputto "SHOWMOVEMENT"
+	say "1"
 	outputto "SERIES"
 	findline "href="
 	findinline ">"
@@ -320,14 +322,22 @@ sayoutput "CurrentUrl"
 outputto "DESCRIPTION"
 sayoutput "Comment"
 
+# Set iTunes Media Type to Audiobook
+outputto "ITUNESMEDIATYPE"
+sayoutput "Audiobook"
+
+# Set iTunes Gapless Playback
+outputto "ITUNESGAPLESS"
+sayoutput "1"
+
 # Experimental Tag Shoehorn
 # Set Series as Movement
-#outputto "MOVEMENTNAME"
-#sayoutput "Series"
+outputto "MOVEMENTNAME"
+sayoutput "Series"
 
 # Set Series # as Movement #
-#outputto "MOVEMENT"
-#sayoutput "series-part"
+outputto "MOVEMENT"
+sayoutput "series-part"
 
 # Set Discnumber
 #outputto "DISCNUMBER"
