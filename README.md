@@ -152,6 +152,16 @@ I did a lot of digging into ID3 standards and this was the best way I could come
    >&ast;*I would prefer Original Pub. year, but Audible is really bad at providing this data*  
    >&ast;&ast;*Custom Tags used as placeholders, To view this tag Tools>Options>Tag Panel>New*
 
+### Players:
+* iOS  
+    1. Prologue - Connects to Plex  
+    2. Play:Sub - Connects to Booksonic  
+* Android  
+    1. Chronicle - Connects to Plex, just released (limited functionality), aims to be similar to Prologue  
+    2. PlexAmp - Connects to Plex, Official Plex audio app, Basic audiobook features but works well enough  
+    3. Booksonic - Connects to Booksonic, has a few quirks but it works  
+    4. Smart - Local media files only, but tons of great Audiobook specific features  
+
 ### Notes:
 Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless.  
 
@@ -165,4 +175,4 @@ I set up three different actions to use depending on the number of tracks of the
 
    If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
 
-   For Android devices, I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart, but it's a step in the right direction.
+   For Android devices, I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart, but it lets you filter by Genre, Narrator, Year, it remembers where you left off very well, it supports Car Play and Android Auto.
