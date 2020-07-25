@@ -324,11 +324,11 @@ sayoutput "Comment"
 
 # Set iTunes Media Type to Audiobook
 outputto "ITUNESMEDIATYPE"
-sayoutput "Audiobook"
+say "Audiobook"
 
 # Set iTunes Gapless Playback
 outputto "ITUNESGAPLESS"
-sayoutput "1"
+say "1"
 
 # Experimental Tag Shoehorn
 # Set Series as Movement
