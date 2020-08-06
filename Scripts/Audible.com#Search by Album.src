@@ -6,6 +6,7 @@
 # 2020-03-24: Updated
 # 2020-04-06: Updated to Audible.com
 # 2020-06-28: Updated to region independent (u/Carlyone)
+# 2020-08-05: Updated
 #
 # This file should be in your sources dir. %appdata%\roaming\mp3tag\data\sources
 # On Windows XP it's C:\Documents and Settings\*username*\Application Data\Mp3tag\data\sources
@@ -106,7 +107,14 @@ while "bc-color-link" 99
 #					A  L  B  U  M
 # ###################################################################
 
-
+# Cover
+outputto "Coverurl"
+findline "\"image\": \""
+replace "_SL175_" "_SS500_"
+replace "_SL300_" "_SS500_"
+findinline "\"image\": \""
+sayuntil "\""
+gotoline 1
 
 # Asin
 findline "<input type=\"hidden\" name=\"asin\" value=\""
@@ -263,6 +271,39 @@ regexpreplace "  +" " "
 replace "bc-color-secondary\" >" ""
 sayrest
 
+# Set Artist = artist, narrator
+outputto "artist"
+sayoutput "Albumartist"
+say ", "
+sayoutput "Composer"
+
+#%artist%=regexp(%artist%,(\b\w+\b)(?=[\s\S]*\b\1\b).+, )
+
+# Set Audible Album URL
+outputto "WWWAUDIOFILE"
+sayoutput "CurrentUrl"
+
+# Set Comment to DESCRIPTION for better MP4 support
+outputto "DESCRIPTION"
+sayoutput "Comment"
+
+# Set iTunes Media Type to Audiobook
+outputto "ITUNESMEDIATYPE"
+say "Audiobook"
+
+# Set iTunes Gapless Playback
+outputto "ITUNESGAPLESS"
+say "1"
+
+# Experimental Tag Shoehorn
+# Set Series as Movement
+outputto "MOVEMENTNAME"
+sayoutput "Series"
+
+# Set Series # as Movement #
+outputto "MOVEMENT"
+sayoutput "series-part"
+
 # © Year, ©, Release Year, Publisher, the closest we can get to Original Pub year, Audible is not consistent with dates
 findline "</div>"
 joinuntil "</span>"
@@ -297,47 +338,6 @@ else
 	movechar 1
 	sayuntil "<"
 endif
-
-# Cover
-outputto "Coverurl"
-findline "\"image\": \""
-replace "_SL175_" "_SS500_"
-replace "_SL300_" "_SS500_"
-findinline "\"image\": \""
-sayuntil "\""
-
-# Set Artist = artist, narrator
-outputto "artist"
-sayoutput "Albumartist"
-say ", "
-sayoutput "Composer"
-
-#%artist%=regexp(%artist%,(\b\w+\b)(?=[\s\S]*\b\1\b).+, )
-
-# Set Audible Album URL
-outputto "WWWAUDIOFILE"
-sayoutput "CurrentUrl"
-
-# Set Comment to DESCRIPTION for better MP4 support
-outputto "DESCRIPTION"
-sayoutput "Comment"
-
-# Set iTunes Media Type to Audiobook
-outputto "ITUNESMEDIATYPE"
-say "Audiobook"
-
-# Set iTunes Gapless Playback
-outputto "ITUNESGAPLESS"
-say "1"
-
-# Experimental Tag Shoehorn
-# Set Series as Movement
-outputto "MOVEMENTNAME"
-sayoutput "Series"
-
-# Set Series # as Movement #
-outputto "MOVEMENT"
-sayoutput "series-part"
 
 # Set Discnumber
 #outputto "DISCNUMBER"
