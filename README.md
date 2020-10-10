@@ -168,10 +168,10 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 ```
 `$filename(desc.txt,utf-8)`  
 `%comment%`
-```  
-    * Save `desc.mte`  
+```
+  * Save `desc.mte`  
     * Set `Export File Name:` as:  
-      * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\desc.txt`  
+     * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\desc.txt`
   * Add New Action `Export`  
     * Click `New`  
     * Label it `reader`  
@@ -180,8 +180,8 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 `$filename(reader.txt,utf-8)`  
 `%composer%`
 ```  
-    * Save `reader.mte`  
-    * Set `Export File Name:` as:  
+   * Save `reader.mte`  
+     * Set `Export File Name:` as:  
       * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\reader.txt`  
 
 Your New Action should look like this:  
@@ -217,9 +217,9 @@ Now that the hard part of setting everything up is out of the way, this is what 
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
   4. Click the Action drop down button, select your  Action  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
-  5. This does not set the Title tag, which Plex uses as the Chapter Name.  There are two easy options to set this:
-    * Click the `Filename - Tag` button, `Format String=%Title%`, this will set the Chapter name to the filename.
-    * Click the Action drop down and select `Chapter %track%` which will give you a generic "Chapter 1, Chapter 2, ..."
+  5. This does not set the Title tag, which Plex uses as the Chapter Name.  There are two easy options to set this:  
+      * Click the `Filename - Tag` button, `Format String=` `%Title%`, this will set the Chapter name to the filename.  
+      * Click the Action drop down and select `Chapter %track%` which will give you a generic "Chapter 1, Chapter 2, ..."  
 <!-- blank line -->
 ----
 <!-- blank line -->
