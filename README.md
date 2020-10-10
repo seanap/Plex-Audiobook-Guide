@@ -115,27 +115,30 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 ----
 <!-- blank line -->
 ### Configure Mp3tag
-* Install [Mp3tag](https://www.mp3tag.de/en/)  
+* Install, or Upgrade [Mp3tag](https://www.mp3tag.de/en/) to the latest version  
 
 ##### Set the default folder Mp3tag automatically looks for book files in.
-* `Tools > Options > Directories`
-* check `start from this directory`  
-* Put the full path of the directory where your books are in `Favorite directory:`  
+* `Tools > Options > Directories`  
+* Put the full path of the directory with your untagged books in `Favorite directory:`  
+* CHECK `start from this directory`  
 ![alt text](https://i.imgur.com/R2lh1YH.png "Default Directory")  
 
 ##### Download my example configuration files to Mp3tag's Appdata directory  
 * Download my repo by clicking [Here](https://github.com/seanap/Plex-Audiobook-Guide/archive/master.zip).  
   * Alternatively, click the green 'Code' dropdown button at the top of this Github page and select “Download Zip”.  
-* The `Mp3tag` folder will be located within a zip archive. Unzip the archive.  
-* Copy (or move) the `Mp3tag` folder to the `~\Appdata\Roaming` folder, merge folders:  
-  * `%LOCALAPPDATA%\Roaming`  
-* Edit my example files with Notepad++ with your specific paths  
-  * `\data\action\1 m4b.mta` Update lines 3, 15, 22 with your path  
-  * `\data\action\001.mta` Update lines 3, 15, 22 with your path  
-  * `\data\action\01.mta` Update lines 3, 15, 22 with your path  
-  * `\export\001 Generate.mte` Update line 1 with your path  
-  * `\export\desc.mte` Update line 1 with your path  
-  * `\export\reader.mte` Update line 1 with your path  
+* The `Mp3tag` folder will be located in the zip archive. Unzip the archive.  
+* Open the `Plex-Audiobook-Guide` folder
+* Copy (or move) the `Mp3tag` folder to `C:\Users\your-username-here\Appdata\Roaming` folder  
+  * Click `Yes` to merge/overwrite files  
+
+##### Edit the newly copied config files with your specific paths
+* Right click the following provided config files and OPEN WITH Notepad++  
+  * `\Mp3tag\data\action\1 m4b.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
+  * `\Mp3tag\data\action\001.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
+  * `\Mp3tag\data\action\01.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
+  * `\Mp3tag\export\001 Generate.mte` Update line 1 with your windows username `C:\Users\your-username-here\...`  
+  * `\Mp3tag\export\desc.mte` Update line 1 with the path to your Plex `\Audiobook` folder  
+  * `\Mp3tag\export\reader.mte` Update line 1 with the path to your Plex `\Audiobook` folder  
 
 <details>
 <summary>Alternatively, you can manually create and configure mp3tag to your specific needs (click to expand)</summary>
@@ -161,11 +164,11 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
   * Add a New Action `Export`  
     * Click `New`  
     * Label it `desc`  
-    * Edit the `desc.mte` file to only include the following two lines:  
+    * Edit the `desc.mte` file to only include the following two lines:    
 ```
 `$filename(desc.txt,utf-8)`  
 `%comment%`
-```
+```  
     * Save `desc.mte`  
     * Set `Export File Name:` as:  
       * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\desc.txt`  
@@ -176,7 +179,7 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 ```
 `$filename(reader.txt,utf-8)`  
 `%composer%`
-```
+```  
     * Save `reader.mte`  
     * Set `Export File Name:` as:  
       * `C:\path\to\Audiobooks\%albumartist%\%series%\%year% - %album%[ '['%series% %series-part%']']\reader.txt`  
@@ -188,11 +191,17 @@ Your New Action should look like this:
 </details>
 
 ##### Test
-* Load an audiobook file in Mp3tag for testing, and select it
-* Click the Web Sources drop down button, select Audible.com > Search by Album
-   ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")
-* Click the Action drop down button, select your new Action  
+* Put an audiobook file for testing in your `\temp` folder  
+* Open Mp3tag and select all files for that book  
+* `Ctrl-k` and set/fix the Track Numbering
+* Click the Web Sources drop down button, select Audible.com > Search by Album  
+   ![alt text](https://i.imgur.com/Q4ySYh2.png "Web Source Select")  
+* Click the Action drop down button, select the Action that corresponds with the number of files  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")  
+  You have three different actions to use depending on the number of files the book has;
+  * For a single track, use the 1 m4b Action. This Action does *not* append a `-pt01` to the end of the filename.  
+  * For 2-99 tracks, use the 01 Action. It will append `-pt01` to the end of the filename.  
+  * For 100-999 tracks, use the 001 Action. It will append `-pt001` to the end of the filename.  
 
 <!-- blank line -->
 ----
@@ -208,15 +217,19 @@ Now that the hard part of setting everything up is out of the way, this is what 
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
   4. Click the Action drop down button, select your  Action  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
+  5. This does not set the Title tag, which Plex uses as the Chapter Name.  There are two easy options to set this:
+    * Click the `Filename - Tag` button, `Format String=%Title%`, this will set the Chapter name to the filename.
+    * Click the Action drop down and select `Chapter %track%` which will give you a generic "Chapter 1, Chapter 2, ..."
 <!-- blank line -->
 ----
 <!-- blank line -->
 #### Tips!  
-   * The script searches using the Album + Artist tag, if there are no results you can type the Album and Artist in the Search dialog box, or you can change these tags to something more search friendly, or you can look up the book at Audible.com and find the ASIN for the book in the addressbar and use that to search in the script's dialog box.  
-   * If the Author is also the Narrator make sure you delete the duplicate entry in the Artist field.  The script automatically combines the Author and Narrator (ex. `Peter Clines, Ray Porter`) in the Artist tag, which Plex uses as a "All Artists on this track" tag.  
-   * Try to only keep 1 cover file in the tag, when the script asks if you want to save the existing cover, say "No".  If you happen to like the included cover over Audibles, in the Tag Review screen you can click the "Utils" button (bottom left) and UNCHECK "Save Image to Tag", but *make sure you remember to recheck this on the next book*.  
-
-   * If this agent matches two different books as the same book, which looks like a duplicate in Plex, Unmatch BOTH books and start by manually matching the incorrect book, then manually re-match the book that was correct.  
+   * There are two key board shortcuts that call the Audible Web Source script, which one to use depends on if the Album and Artist tags exist or are accurate.  
+      * `Ctrl-i` - Use if there are **no** tags, or if the Album/Artist tags are incorrect or contain junk data that will effect the Audible search. This short cut will bring up the search and allow you to put exactly what you want to search Audible with, try to keep it as simple as possible with only Album and Author, you can also put the ASIN number in this dialog box to search for a specific book on Audible.  
+      * `Ctrl-Shift-i` Use if the Album and Artist tag look to be ok, this will bypass the search input dialog box and bring you straight to the results.   
+   * If the Author is also the Narrator make sure you delete the duplicate entry in the Artist field.  The script automatically combines the Author and Narrator (ex. `Peter Clines, Ray Porter`) in the Artist tag, which Plex uses as a "All Artists on this track" tag. Combining these tags for the Artist helps when searching Plex.  
+   * Try to only keep 1 cover file in the tag, when the script asks if you want to save the existing cover, say "**No**".  If you happen to like the included cover over Audibles, in the Tag Review screen you can click the "Utils" button (bottom left) and UNCHECK "Save Image to Tag", but *make sure you remember to recheck this on the next book*.  
+   * In Plex; If the Audiobook agent matches two different books as the same book, which will look like a duplicate in Plex, Unmatch BOTH books and start by manually matching the incorrect book, then manually re-match the book that was correct.  
 
 <!-- blank line -->
 ----
@@ -273,16 +286,10 @@ I did a lot of digging into ID3 standards and this was the best way I could come
 ----
 <!-- blank line -->
 ### Notes:
-Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless, especially when using keyboard shortcuts.  
+Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless, especially when using keyboard shortcuts.   
 
-I set up three different actions to use depending on the number of tracks of the book;  
-* For a single track, use the 1 m4b Action. I removed the `-pt$num(%track%,2)` from the end of the filename Format Value.  
-* For 2-99 tracks, use the 01 Action. It will append `-pt01` to the end of the filename.  
-* For 100-999 tracks, use the 001 Action. It will append `-pt001` to the end of the track. Created by duplicating the 01 Action and editing the Format Value string to `-pt$num(%track%,3)`.  
+Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure beyond `/Audiobook/Author/Book/book.mp3`, Booksonic exclusively uses folder structure for it's organization and it also looks for `cover.jpg`/`desc.txt`/`reader.txt` files (automatically created with the Action script) for additional metadata.
 
+If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
 
-   Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure beyond `/Audiobook/Author/Book/book.mp3`, Booksonic exclusively uses folder structure for it's organization and it also looks for `cover.jpg`/`desc.txt`/`reader.txt` files (automatically created with the Action script) for additional metadata.
-
-   If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
-
-   For Android devices, I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart. Pros: It lets you filter/browse by Genre, Narrator, Year, it remembers where you left off very well, it supports Car Play and Android Auto. Cons: Suffers from the 90% marked as Played bug in plex, no sleep timer, requires PlexPass.
+For Android devices, I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart. Pros: It lets you filter/browse by Genre, Narrator, Year, it remembers where you left off very well, it supports Car Play and Android Auto. Cons: Suffers from the 90% marked as Played bug in plex, no sleep timer, requires PlexPass.

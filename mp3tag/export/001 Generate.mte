@@ -1,1 +1,1 @@
-$filename(C:\Users\User\AppData\Roaming\Mp3tag\data\columns\AutoColumns.Names.txt,ANSI)$loop(%_path%)$regexp($list($char(8),$char(8),$char(8)$char(13)$char(10)),'\x08(.+?)\x08.+?\x08\r\n','$1\r\n')$loopend()
+$filename(C:\Users\your-username-here\AppData\Roaming\Mp3tag\data\columns\AutoColumns.Names.txt,ANSI)$loop(%_path%)$regexp($list($char(8),$char(8),$char(8)$char(13)$char(10)),'\x08(.+?)\x08.+?\x08\r\n','$1\r\n')$loopend()
