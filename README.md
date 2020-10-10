@@ -215,7 +215,7 @@ Now that the hard part of setting everything up is out of the way, this is what 
   2. `Ctrl-k` Set/fix the track numbers
   3. `Ctrl-shift-i` or Click the Web Source (quick) button
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
-  4. Click the Action drop down button, select your  Action  
+  4. Click the Action drop down button, select the Action that corresponds with the number of files  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
   5. This does not set the Title tag, which Plex uses as the Chapter Name.  There are two easy options to set this:  
       * Click the `Filename - Tag` button, `Format String=` `%Title%`, this will set the Chapter name to the filename.  
