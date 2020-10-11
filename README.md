@@ -19,7 +19,7 @@ Follow the Instructions [here](https://github.com/seanap/Audiobooks.bundle#insta
 * `https://github.com/seanap/Audiobooks.bundle#installation`
 
 <details>
-<summary>Alternate Installation using WebTools Plex Plugin</summary>
+<summary>Alternate Installation using WebTools Plex Plugin (click to expand)</summary>
 <br>
 
 * Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
