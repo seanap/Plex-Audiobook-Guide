@@ -1,15 +1,40 @@
 # Plex & Booksonic Audiobook Guide
-I've seen a lot of interest about this topic, this is my process for getting the most metadata into Plex in the least amount of time.  I'll be doing a deep dive into some advanced features of the tools available to us in order to get a nice, clean, and functional UI while saving hundreds of hours of manual, tedious, data entry.  This walkthrough is specifically for optimal Audiobook experience using Plex, which in it's current state only quasi-supports audiobooks. This guide assumes you have Plex Media Server, and/or Booksonic, installed already.  This guide is meant to serve as a framework for fully utilizing metadata.  Everything is customizable, and easy to change.
+This guide is specifically for optimal Audiobook experience using Plex, which in it's current state only quasi-supports audiobooks. This is my method for getting the most metadata into Plex in the least amount of time.  I'll be doing a deep dive into some advanced features of the tools available to us in order to get a nice, clean, and functional UI. This guide is meant to serve as a framework for fully utilizing metadata.  Everything is customizable, and easy to change.
+
+### Contents
+* [Goal](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#goal)
+* [Configure Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-plex)
+   * [Install Plex Audiobook Agents](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#install-metadata-agent-for-plex)
+   * [Configure Metadata Agent in Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-metadata-agent-in-plex)
+   * [Create Audiobook Library in Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#create-audiobook-library-in-plex)
+* [(Optional) Automatically copy untagged Audiobook files to a temp folder](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#optional-automatically-copy-untagged-audiobook-files-to-a-temp-folder)
+* [Configure Mp3tag](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-mp3tag)
+  * [Set the default folder](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#set-the-default-folder-mp3tag-automatically-looks-for-book-files-in)
+  * [Download my example configuration files to Mp3tag's Appdata directory](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#download-my-example-configuration-files-to-mp3tags-appdata-directory)
+  * [Edit the newly copied config files with your specific paths](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#edit-the-newly-copied-config-files-with-your-specific-paths)
+  * [Test](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#test)
+* [Workflow](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#workflow)
+* [Tips!](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#tips)
+* [Tags that are being set](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#tags-that-are-being-set)
+* [Players](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#players)
+* [Notes](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#notes)
 
 ### Goal
-Show as much metadata as possible in Plex &amp; Booksonic.  This will let you filter by Narrator, Author, Genre, Year, Series, Rating, Publisher, etc.  Show all album cover art and Summary's. Make the organizing and tagging as quick and painless as possible.  
-![alt text](https://i.imgur.com/C3wgGte.png "Plex Author Page")  
+Show as much metadata as possible in Plex &amp; Booksonic.  Filter/browse/search by Narrator, Author, Genre, Year, Series, Rating, or Publisher.  Show Album Covers and Summary's. Make the organizing and tagging as quick and painless as possible.  
 
-![alt text](https://i.imgur.com/YHqhdhO.png "Plex Book Summary")  
+![Plex Library View](https://i.imgur.com/k4up0ao.jpg)
+<p float="left">
+  <img src="https://i.imgur.com/C3wgGte.png" width="48%" />
+  <img src="https://i.imgur.com/YHqhdhO.png" width="50%" />
+</p>
 
 ![alt text](https://i.imgur.com/oSfZLHo.png "Booksonic Book Summary")  
+<p float="left">
+  <img src="https://i.imgur.com/A1IYa5I.png" width="24%" />
+  <img src="https://i.imgur.com/eKrH92i.png" width="23.5%" />
+  <img src="https://i.imgur.com/HGbPdNM.png" width="49%" />
+</p>
 
-![alt text](https://i.imgur.com/nVqSlWq.png "Tags")
 <!-- blank line -->
 ----
 <!-- blank line -->
@@ -223,9 +248,9 @@ Now that the hard part of setting everything up is out of the way, this is what 
 <!-- blank line -->
 ----
 <!-- blank line -->
-#### Tips!  
+### Tips!  
    * There are two key board shortcuts that call the Audible Web Source script, which one to use depends on if the Album and Artist tags exist or are accurate.  
-      * `Ctrl-i` - Use if there are **no** tags, or if the Album/Artist tags are incorrect or contain junk data that will effect the Audible search. This short cut will bring up the search and allow you to put exactly what you want to search Audible with, try to keep it as simple as possible with only Album and Author, you can also put the ASIN number in this dialog box to search for a specific book on Audible.  
+      * `Ctrl-i` - Use if there are **no** tags, or if the Album/Artist tags are incorrect or contain junk data that will effect the Audible search. This shortcut will bring up the search and allow you to put exactly what you want to search Audible with, try to keep it as simple as possible with only Album and Author, you can also put the ASIN number in this dialog box to search for a specific book on Audible.  
       * `Ctrl-Shift-i` Use if the Album and Artist tag look to be ok, this will bypass the search input dialog box and bring you straight to the results.   
    * If the Author is also the Narrator make sure you delete the duplicate entry in the Artist field.  The script automatically combines the Author and Narrator (ex. `Peter Clines, Ray Porter`) in the Artist tag, which Plex uses as a "All Artists on this track" tag. Combining these tags for the Artist helps when searching Plex.  
    * Try to only keep 1 cover file in the tag, when the script asks if you want to save the existing cover, say "**No**".  If you happen to like the included cover over Audibles, in the Tag Review screen you can click the "Utils" button (bottom left) and UNCHECK "Save Image to Tag", but *make sure you remember to recheck this on the next book*.  
@@ -235,7 +260,7 @@ Now that the hard part of setting everything up is out of the way, this is what 
 ----
 <!-- blank line -->
 ### Tags that are being set
-I did a lot of digging into ID3 standards and this was the best way I could come up with to shoehorn Audiobook metadata into mp3 tags.  It certainly isn't perfect, but it does work very nicely for Plex and other Audiobook apps.  These can easily be changed to fit your particular style by editing the Audible.com#Search by Album.src file in Notepad++.
+I did a lot of digging into ID3 standards and this was the best way I could come up with to shoehorn Audiobook metadata into mp3 tags.  It certainly isn't perfect, but it does work very nicely for Plex and other Audiobook apps.  These can be changed to fit your particular style by editing the Audible.com#Search by Album.src file in Notepad++.
 
 | mp3tag Tag    | Audible.com Value|
 | ------------- | ---------------- |
@@ -275,18 +300,18 @@ I did a lot of digging into ID3 standards and this was the best way I could come
 <!-- blank line -->
 ### Players:
 * **iOS**  
-    1. Prologue - Connects to Plex  
-    2. Play:Sub - Connects to Booksonic  
+    1. [Prologue](https://apps.apple.com/us/app/prologue/id1459223267) - Connects to Plex  
+    2. [Play:Sub](https://apps.apple.com/us/app/play-sub-music-streamer/id955329386) - Connects to Booksonic  
 * **Android**  
-    1. Chronicle - Connects to Plex, just released (limited functionality), aims to be similar to Prologue  
-    2. PlexAmp - Connects to Plex, Official Plex audio app, Basic audiobook features but works well enough  
-    3. Booksonic - Connects to Booksonic, has a few quirks but it works  
-    4. Smart - Local media files only, but tons of great Audiobook specific features  
+    1. [Chronicle](https://play.google.com/store/apps/details?id=io.github.mattpvaughn.chronicle) - Connects to Plex, just released (limited functionality), aims to be similar to Prologue  
+    2. [PlexAmp](https://plexamp.com/) - Connects to Plex, Official Plex audio app, Basic audiobook features but works well enough  
+    3. [Booksonic](https://play.google.com/store/apps/details?id=github.popeen.dsub) - Connects to [Booksonic](https://booksonic.org/), has a few quirks but it works  
+    4. [Smart](https://play.google.com/store/apps/details?id=ak.alizandro.smartaudiobookplayer) - Local media files only, but tons of great Audiobook specific features  
 <!-- blank line -->
 ----
 <!-- blank line -->
 ### Notes:
-Once you have mp3tag, Audiobook metadata agent and Plex configured the work flow becomes pretty quick and painless, especially when using keyboard shortcuts.   
+Once you have mp3tag, Audiobook metadata agent, and Plex configured the work flow becomes pretty quick and painless, especially when using keyboard shortcuts.   
 
 Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure beyond `/Audiobook/Author/Book/book.mp3`, Booksonic exclusively uses folder structure for it's organization and it also looks for `cover.jpg`/`desc.txt`/`reader.txt` files (automatically created with the Action script) for additional metadata.
 
