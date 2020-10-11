@@ -133,12 +133,12 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 
 ##### Edit the newly copied config files with your specific paths
 * Right click the following provided config files and OPEN WITH Notepad++  
-  * `\Mp3tag\data\action\1 m4b.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
-  * `\Mp3tag\data\action\001.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
-  * `\Mp3tag\data\action\01.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
-  * `\Mp3tag\export\001 Generate.mte` Update line 1 with your windows username `C:\Users\your-username-here\...`  
-  * `\Mp3tag\export\desc.mte` Update line 1 with the path to your Plex `\Audiobook` folder  
-  * `\Mp3tag\export\reader.mte` Update line 1 with the path to your Plex `\Audiobook` folder  
+  * `%APPDATA%\Mp3tag\data\action\1 m4b.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
+  * `%APPDATA%\Mp3tag\data\action\001.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
+  * `%APPDATA%\Mp3tag\data\action\01.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
+  * `%APPDATA%\Mp3tag\export\001 Generate.mte` Update line 1 with your windows username `C:\Users\your-username-here\...`  
+  * `%APPDATA%\Mp3tag\export\desc.mte` Update line 1 with the path to your Plex `\Audiobook` folder  
+  * `%APPDATA%\Mp3tag\export\reader.mte` Update line 1 with the path to your Plex `\Audiobook` folder  
 
 <details>
 <summary>Alternatively, you can manually create and configure mp3tag to your specific needs (click to expand)</summary>
@@ -166,8 +166,8 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
     * Label it `desc`  
     * Edit the `desc.mte` file to only include the following two lines:    
 ```
-`$filename(desc.txt,utf-8)`  
-`%comment%`
+$filename(desc.txt,utf-8)
+%comment%
 ```
   * Save `desc.mte`  
     * Set `Export File Name:` as:  
@@ -177,8 +177,8 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
     * Label it `reader`  
     * Edit the `reader.mte` file to only include the following two lines:  
 ```
-`$filename(reader.txt,utf-8)`  
-`%composer%`
+$filename(reader.txt,utf-8)
+%composer%
 ```  
    * Save `reader.mte`  
      * Set `Export File Name:` as:  
