@@ -79,16 +79,18 @@ Follow the Instructions [here](https://github.com/seanap/Audiobooks.bundle#insta
 ----
 <!-- blank line -->
 ### (Optional) Automatically copy untagged Audiobook files to a temp folder
-Optional: This step is only if you want to preserve the original unedited Audiobook files. Recommended if you are seeding torrents, for example from librivox.org
+Optional: This step is only required if you want to preserve the original unedited Audiobook files. This is required if you are seeding torrents, for example from librivox.org.
 
 <details>
-<summary>What I wanted to achieve with this: (click to expand)</summary>
+<summary>What I want to achieve with this step: (click to expand)</summary>
 <br>
 I have 3 working directories for my Audiobooks:
 
 * `~/Original` Folder where I keep the un-altered original audio Files  
 * `~/temp` Folder where I copy the audio files that need to be processed  
-* `~/Audiobooks` Folder where I archive my properly tagged files in the proper folder Structure
+* `~/Audiobooks` Folder where I archive my properly tagged files in the proper folder structure, this is the folder I point Plex at
+
+> Anywhere these folders are referenced, make sure to update to your specific paths
 
 <br>
 
@@ -123,8 +125,36 @@ RUN SCRIPT (every 2min)
 ```
 </details>
 
- ##### Create the Copy script  [LINUX ONLY]
- >*Please consider contributing a Windows script*
+<br>
+
+This will automatically copy untagged books from `\Original` to `\temp`, which we will set as the default folder Mp3tag opens to, so all you have to do is open Mp3tag and any books that need processing will be automatically loaded. Expand and follow one of the options below for your OS.
+
+<details>
+<summary>[WINDOWS] Monitor /original folder and move untagged audiofiles to /temp: (click to expand)</summary>
+<br>
+
+* Download, Install, and Run [Dropit](http://www.dropitproject.com/#download)  
+* Download Dropit settings Backup file [BookCopy [v1].zip](https://github.com/seanap/Plex-Audiobook-Guide/raw/master/Dropit/Backup/BookCopy%20%5Bv1%5D.zip)  
+* In the System Tray: Right-Click `Dropit` > `Options` > `Various` > `Restore` and **Open** `BookCopy [v1].zip`
+<p float="left">
+  <img src="https://i.imgur.com/qrEFFQH.png" width="69%" />
+  <img src="https://i.imgur.com/DBdlB6k.png" width="30%" />
+</p>
+* In the `Options` window, go to the `Monitoring` tab and edit `Z:\Original` with your specific folder  
+![Update Monitored Folder Path](https://i.imgur.com/evlHN8K.png)  
+* Click Save, and OK to close the Options windows  
+* Right-Click `Dropit` icon in system tray  
+* Click `Associations`
+   * Make sure `BookCopy` profile is selected in the bottom drop-down  
+* Double-Click `AudiobookCopy` and edit `4. Destination Folder` with your specific `\temp` folder
+![Update Destination Folder](https://i.imgur.com/T4HoYQq.png)  
+> Test it by Copying an audiofile to /Original. Make sure it's working before moving on
+
+</details>
+
+<details>
+<summary>[LINUX] Create a BookCopy script: (click to expand)</summary>
+<br>
 
    * Open Notepad++  
    * Create a new file and name it `BookCopy.sh`  
@@ -133,9 +163,10 @@ RUN SCRIPT (every 2min)
 #!/bin/sh
 find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname \*.mp4 -o -iname \*.m4a -o -iname \*.ogg \) -mmin -3 -exec cp -n "{}" /full/path/to/temp/ \;
 ```
-
    * Edit cron `crontab -e` add the following line:  
 `*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
+</details>
+
 <!-- blank line -->
 ----
 <!-- blank line -->
