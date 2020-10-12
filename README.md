@@ -83,7 +83,6 @@ Optional: This step is only required if you want to preserve the original unedit
 
 <details>
 <summary>What I want to achieve with this step: (click to expand)</summary>
-<br>
 I have 3 working directories for my Audiobooks:
 
 * `~/Original` Folder where I keep the un-altered original audio Files  
@@ -125,8 +124,6 @@ RUN SCRIPT (every 2min)
 ```
 </details>
 
-<br>
-
 This will automatically copy untagged books from `\Original` to `\temp`, which we will set as the default folder Mp3tag opens to, so all you have to do is open Mp3tag and any books that need processing will be automatically loaded. Expand and follow one of the options below for your OS.
 
 <details>
@@ -140,13 +137,14 @@ This will automatically copy untagged books from `\Original` to `\temp`, which w
   <img src="https://i.imgur.com/qrEFFQH.png" width="69%" />
   <img src="https://i.imgur.com/DBdlB6k.png" width="30%" />
 </p>
+
 * In the `Options` window, go to the `Monitoring` tab and edit `Z:\Original` with your specific folder  
-![Update Monitored Folder Path](https://i.imgur.com/evlHN8K.png)  
+![Update Monitored Folder Path](https://i.imgur.com/evlHN8K.png)
 * Click Save, and OK to close the Options windows  
 * Right-Click `Dropit` icon in system tray  
-* Click `Associations`
+* Click `Associations`  
    * Make sure `BookCopy` profile is selected in the bottom drop-down  
-* Double-Click `AudiobookCopy` and edit `4. Destination Folder` with your specific `\temp` folder
+* Double-Click `AudiobookCopy` and edit `4. Destination Folder` with your specific `\temp` folder  
 ![Update Destination Folder](https://i.imgur.com/T4HoYQq.png)  
 > Test it by Copying an audiofile to /Original. Make sure it's working before moving on
 
