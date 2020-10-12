@@ -347,3 +347,7 @@ Following this guide will also give you everything you need for a properly organ
 If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
 
 For Android devices, I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart. Pros: It lets you filter/browse by Genre, Narrator, Year, it remembers where you left off very well, it supports Car Play and Android Auto. Cons: Suffers from the 90% marked as Played bug in plex, no sleep timer, requires PlexPass.
+<!-- blank line -->
+----
+<!-- blank line -->
+<a href="https://www.buymeacoffee.com/seanap" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Book" height="41" width="174"></a>
