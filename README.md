@@ -3,16 +3,17 @@ This guide is specifically for optimal Audiobook experience using Plex, which in
 
 ### Contents
 * [Goal](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#goal)
-* [Configure Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-plex)
-   * [Install Plex Audiobook Agents](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#install-metadata-agent-for-plex)
-   * [Configure Metadata Agent in Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-metadata-agent-in-plex)
-   * [Create Audiobook Library in Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#create-audiobook-library-in-plex)
+* [Working Folders](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#working-folders)  
 * [(Optional) Automatically copy untagged Audiobook files to a temp folder](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#optional-automatically-copy-untagged-audiobook-files-to-a-temp-folder)
 * [Configure Mp3tag](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-mp3tag)
   * [Set the default folder](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#set-the-default-folder-mp3tag-automatically-looks-for-book-files-in)
   * [Download my example configuration files to Mp3tag's Appdata directory](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#download-my-example-configuration-files-to-mp3tags-appdata-directory)
   * [Edit the newly copied config files with your specific paths](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#edit-the-newly-copied-config-files-with-your-specific-paths)
   * [Test](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#test)
+* [Configure Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-plex)
+  * [Install Plex Audiobook Agents](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#install-metadata-agent-for-plex)
+  * [Configure Metadata Agent in Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#configure-metadata-agent-in-plex)
+  * [Create Audiobook Library in Plex](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#create-audiobook-library-in-plex)
 * [Workflow](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#workflow)
 * [Tips!](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#tips)
 * [Tags that are being set](https://github.com/seanap/Plex-Audiobook-Guide/blob/master/README.md#tags-that-are-being-set)
@@ -38,58 +39,23 @@ Show as much metadata as possible in Plex &amp; Booksonic.  Filter/browse/searc
 <!-- blank line -->
 ----
 <!-- blank line -->
-### Configure Plex
-#### Install Metadata Agent for Plex
-Follow the Instructions [here](https://github.com/seanap/Audiobooks.bundle#installation)
-* `https://github.com/seanap/Audiobooks.bundle#installation`
+### Working folders
+I have 3 working directories for my Audiobooks:
+* `~/Original` Folder where I keep the un-altered original audio Files  
+* `~/temp` Folder where I copy the audio files that need to be processed, this is the folder Mp3tag will open by default  
+* `~/Audiobooks` Folder where I archive my properly tagged files in the proper folder structure, this is the folder I point Plex at
 
-<details>
-<summary>Alternate Installation using WebTools Plex Plugin (click to expand)</summary>
-<br>
+> Anywhere these folders are referenced, make sure to update to your specific paths
 
-* Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
-  * Restart Plex
-  * Access WebTools at this URL  
-    * `http://<your IP address here>:33400/`
-* Install the Audiobook Metadata Agent using WebTools:  
-  * In the WebTools page Click `UAS`
-  * Enter the following Manual Installation URL
-    * `https://github.com/seanap/Audiobooks.bundle`
-  * Restart Plex
-</details>
-
-#### Configure Metadata Agent in Plex  
-* Go to `Settings > Agents > Artist > Audiobooks` Put Local Media Assets above Audiobooks
- ![alt text](https://i.imgur.com/oEKdpmd.png "Artist Agent Config")
-* Go to `Settings > Agents > Albums > Audiobooks` Put Local Media Assets above Audiobooks
- ![alt text](https://i.imgur.com/1aKHJeB.png "Album Agent Config")
-
-#### Create Audiobook Library in Plex
- * **General** select `Music`
- * **Add folders** browse to your Audiobook folders
- * **Advanced** set the following:  
-   * Album sorting - By Name (This uses the Albumsort tag to keep series together and in order)
-   * *UNCHECK* Prefer Local Metadata
-   * *CHECK* Store track progress
-   * *UNCHECK* Popular Tracks
-   * Genres - Embedded tags
-   * Album Art - Local Files Only
-   * Agent - Audiobooks
+Best Practice: Tag your files *before* adding them to Plex.
 <!-- blank line -->
 ----
 <!-- blank line -->
 ### (Optional) Automatically copy untagged Audiobook files to a temp folder
-Optional: This step is only required if you want to preserve the original unedited Audiobook files. This is required if you are seeding torrents, for example from librivox.org.
+Optional: This step is only required if you want to preserve the original unedited Audiobook files. This is required if you are seeding torrents, for example from librivox.org. That said, this is a recommended step for everyone, just incase something goes horribly wrong with Mp3tag or copying files.
 
 <details>
 <summary>What I want to achieve with this step: (click to expand)</summary>
-I have 3 working directories for my Audiobooks:
-
-* `~/Original` Folder where I keep the un-altered original audio Files  
-* `~/temp` Folder where I copy the audio files that need to be processed  
-* `~/Audiobooks` Folder where I archive my properly tagged files in the proper folder structure, this is the folder I point Plex at
-
-> Anywhere these folders are referenced, make sure to update to your specific paths
 
 <br>
 
@@ -123,6 +89,8 @@ RUN SCRIPT (every 2min)
 +-- book2.m4b
 ```
 </details>
+
+<br>
 
 This will automatically copy untagged books from `\Original` to `\temp`, which we will set as the default folder Mp3tag opens to, so all you have to do is open Mp3tag and any books that need processing will be automatically loaded. Expand and follow one of the options below for your OS.
 
@@ -260,6 +228,46 @@ Your New Action should look like this:
 <!-- blank line -->
 ----
 <!-- blank line -->
+### Configure Plex
+#### Install Metadata Agent for Plex
+Follow the Instructions [here](https://github.com/seanap/Audiobooks.bundle#installation)
+* `https://github.com/seanap/Audiobooks.bundle#installation`
+
+<details>
+<summary>Alternate Installation using WebTools Plex Plugin (click to expand)</summary>
+<br>
+
+* Install [WebTools 4 Plex v3.0](https://github.com/ukdtom/WebTools.bundle/wiki/Install)  
+  * Restart Plex
+  * Access WebTools at this URL  
+    * `http://<your IP address here>:33400/`
+* Install the Audiobook Metadata Agent using WebTools:  
+  * In the WebTools page Click `UAS`
+  * Enter the following Manual Installation URL
+    * `https://github.com/seanap/Audiobooks.bundle`
+  * Restart Plex
+</details>
+
+#### Configure Metadata Agent in Plex  
+* Go to `Settings > Agents > Artist > Audiobooks` Put Local Media Assets above Audiobooks
+ ![alt text](https://i.imgur.com/oEKdpmd.png "Artist Agent Config")
+* Go to `Settings > Agents > Albums > Audiobooks` Put Local Media Assets above Audiobooks
+ ![alt text](https://i.imgur.com/1aKHJeB.png "Album Agent Config")
+
+#### Create Audiobook Library in Plex
+ * **General** select `Music`
+ * **Add folders** browse to your Audiobook folders
+ * **Advanced** set the following:  
+   * Album sorting - By Name (This uses the Albumsort tag to keep series together and in order)
+   * *UNCHECK* Prefer Local Metadata
+   * *CHECK* Store track progress
+   * *UNCHECK* Popular Tracks
+   * Genres - Embedded tags
+   * Album Art - Local Files Only
+   * Agent - Audiobooks
+<!-- blank line -->
+----
+<!-- blank line -->
 ### Workflow  
 Now that the hard part of setting everything up is out of the way, this is what your typical workflow will look like moving forward:
 > *Mp3tag can only work on one audiobook at a time.*
@@ -272,8 +280,8 @@ Now that the hard part of setting everything up is out of the way, this is what 
   4. Click the Action drop down button, select the Action that corresponds with the number of files  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
   5. This does not set the Title tag, which Plex uses as the Chapter Name.  There are two easy options to set this:  
-      * Click the `Filename - Tag` button, `Format String=` `%Title%`, this will set the Chapter name to the filename.  
-      * Click the Action drop down and select `Chapter %track%` which will give you a generic "Chapter 1, Chapter 2, ..."  
+      * Click the `Filename - Tag` button, `Format String=` `%Title%`, this will set the filename as the Chapter name.  
+      * Click the Action drop down, select `Chapter %track%` which will give you a generic "Chapter 1, Chapter 2, ..."  
 <!-- blank line -->
 ----
 <!-- blank line -->
