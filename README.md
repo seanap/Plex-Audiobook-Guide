@@ -141,7 +141,7 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 
 #### Set the default folder Mp3tag automatically looks for book files in.
 * `Tools > Options > Directories`  
-* Put the full path of the directory with your untagged books in `Favorite directory:`  
+* Put the full path of the `\temp` directory with your untagged books in `Favorite directory:`  
 * CHECK `start from this directory`  
 ![alt text](https://i.imgur.com/R2lh1YH.png "Default Directory")  
 
