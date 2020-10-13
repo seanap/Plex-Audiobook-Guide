@@ -139,13 +139,13 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 ### Configure Mp3tag
 * Install, or Upgrade [Mp3tag](https://www.mp3tag.de/en/) to the latest version  
 
-##### Set the default folder Mp3tag automatically looks for book files in.
+#### Set the default folder Mp3tag automatically looks for book files in.
 * `Tools > Options > Directories`  
 * Put the full path of the directory with your untagged books in `Favorite directory:`  
 * CHECK `start from this directory`  
 ![alt text](https://i.imgur.com/R2lh1YH.png "Default Directory")  
 
-##### Download my example configuration files to Mp3tag's Appdata directory  
+#### Download my example configuration files to Mp3tag's Appdata directory  
 * Download my repo by clicking [Here](https://github.com/seanap/Plex-Audiobook-Guide/archive/master.zip).  
   * Alternatively, click the green 'Code' dropdown button at the top of this Github page and select “Download Zip”.  
 * The `Mp3tag` folder will be located in the zip archive. Unzip the archive.  
@@ -153,7 +153,7 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 * Copy (or move) the `Mp3tag` folder to `C:\Users\your-username-here\Appdata\Roaming` folder  
   * Click `Yes` to merge/overwrite files  
 
-##### Edit the newly copied config files with your specific paths
+#### Edit the newly copied config files with your specific paths
 * Right click the following provided config files and OPEN WITH Notepad++  
   * `%APPDATA%\Mp3tag\data\action\1 m4b.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
   * `%APPDATA%\Mp3tag\data\action\001.mta` Update lines 3, 15, 22 with the path to your Plex `\Audiobook` folder  
@@ -166,15 +166,15 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 <summary>Alternatively, you can manually create and configure mp3tag to your specific needs (click to expand)</summary>
 <br>
 
-##### Install the Audible custom web sources  
+#### Install the Audible custom web sources  
   * [Download](https://github.com/seanap/Audible.com-Search-by-Album/archive/master.zip) the custom web source files
   * Drop the `Audible.com#Search by Album.src` file in your `%appdata%\Roaming\Mp3tag\data\sources` folder
 
-##### Cofigure the `Tag Panel`
+#### Cofigure the `Tag Panel`
   * This can be manually adjusted Under `Tools > Options > Tag Panel`  
   ![alt text](https://i.imgur.com/wHdZcHh.png "Tag Panel")
 
-##### Create a custom Action that will Rename, Proper Folder Structure, and Export cover/desc/reader
+#### Create a custom Action that will Rename, Proper Folder Structure, and Export cover/desc/reader
   * Load an audiobook file in Mp3tag for testing, and select it  
   * Click the Actions menu, select Actions (or `Alt-6`)  
   * Click New, and Label it (eg. 01 - Filename - Folder Structure - Cover in Folder)  
@@ -212,7 +212,7 @@ Your New Action should look like this:
   ![alt text](https://i.imgur.com/YfxJOGj.png "Filename format")
 </details>
 
-##### Test
+#### Test
 * Put an audiobook file for testing in your `\temp` folder  
 * Open Mp3tag and select all files for that book  
 * `Ctrl-k` and set/fix the Track Numbering
