@@ -20,7 +20,7 @@
 [AlbumUrl]=https://www.audible.com
 [WordSeperator]=+
 [IndexFormat]=%_url%|%Album%|%Author%|%Duration%|%Year%|%Language%
-[SearchBy]=%_FILENAME% $regexp(%_FILENAME%,'[- ]+cd ?\d+$',,1)
+[SearchBy]=$regexp(%_FILENAME%,'[- ]+cd ?\d+$',,1)
 [Encoding]=url-utf-8
 
 
@@ -31,47 +31,46 @@
 #DebugWriteInput #"C:\Users\%user%\Desktop\mp3tag.html"
 #Debug "ON" #"C:\Users\%user%\Desktop\mp3tagdebug.txt"
 
-joinuntil "</html>"
-regexpreplace "[\r\n]+" ""
-regexpreplace ".+results" "results"
-regexpreplace "<script asyn.+" ""
+#Only select the area we need instead of everyting.
+findline "<ul  class=\"bc-list"
+joinuntil "center-4"
+
 regexpreplace "\s\s+" " "
 regexpreplace "\t+" " "
 replace "\" >" "\">"
 replace "> <" "><"
 replace "Running Time:" ""
 
-
 findinline "results"
 findinline "<h3 class=\"bc-heading"
 
-do	
-	#  Url		
+do
+	#  Url
 	findinline "href=\""
 	sayuntil "?"
 	say "?ipRedirectOverride=true&overrideBaseCountry"
 	say "|"
-	
+
 	# Album
 	findinline ">"
 	sayuntil "<"
-	
+
 	findinline "</li>"
 	if "<li class=\"bc-list-item subtitle"
 		say " - "
 		findinline "bc-color-secondary\">"
 		sayuntil "<"
-		
+
 	else
 		if  "<li class=\"bc-list-item bc"
 			say " - "
 			findinline ">"
 			sayuntil "<"
 		endif
-	
+
 	endif
-	say "|" 
-	
+	say "|"
+
 	#Author
 	findinline "authorLabel\">"
 	findinline "href="
@@ -79,13 +78,13 @@ do
 	sayuntil "<"
 	say "|"
 
-	
+
     # Duration
     findinline "runtimeLabel\">"
     findinline "bc-color-secondary\">"
     sayuntil "<"
     say "|"
-	
+
     # Year
     findinline "Release date:"
 	sayuntil "<"
@@ -95,12 +94,11 @@ do
 	findinline "languageLabel\""
 	findinline "Language:"
 	sayuntil "<"
-	
+
 	saynewline
 	findinline "<h3 class=\"bc-heading " 1 1
 
 while "bc-color-link" 99
-
 
 [ParserScriptAlbum]=...
 # ###################################################################
@@ -141,11 +139,11 @@ if ":"
 	outputto "subtitle"
 	movechar 2
 	sayuntil "<"
-else	
+else
 	findline "<h1  class=\"bc-heading"
 	joinuntil "authorLabel"
 	findinline ">" 1 1
-	outputto "tmp_Album"
+	outputto "Album"
 	sayuntil "<"
 endif
 
@@ -201,13 +199,11 @@ if "seriesLabel"
 	say " "
 	sayoutput "series-part"
 	say " - "
-	sayoutput "tmp_Album"
+	sayoutput "album"
 	outputto "CONTENTGROUP"
 	sayoutput "series"
 	say ", Book #"
 	sayoutput "series-part"
-	outputto "ALBUM"
-	sayoutput "Albumsort"
 	IfnotOutput "Subtitle"
 		outputto "subtitle"
 		sayoutput "CONTENTGROUP"
@@ -215,17 +211,11 @@ if "seriesLabel"
 	endif
 else
 	IfnotOutput "Subtitle"
-		outputto "ALBUM"
-		sayoutput "tmp_Album"
 		outputto "Albumsort"
-		sayoutput "tmp_Album"
+		sayoutput "album"
 	else
-		outputto "ALBUM"
-		sayoutput "tmp_Album"
-		say ": "
-		sayoutput "Subtitle"
 		outputto "Albumsort"
-		sayoutput "tmp_Album"
+		sayoutput "album"
 		say ": "
 		sayoutput "Subtitle"
 	endif
@@ -233,27 +223,32 @@ else
 endif
 
 # 1st Genre
-outputto "tmp_Genre1"
-findline "categoriesLabel"
-joinuntil "</span>"
-findinline "href="
-findinline ">"
-sayuntil "<"
-
-# 2nd Genre
-findinline "href=" 1 1
-movechar -1
-if "="
+findline "categoriesLabel" 1 1
+unspace
+if "categoriesLabel"
+	outputto "tmp_Genre1"
+	findinline "categoriesLabel" 1 1
+	joinuntil "</span>"
+	findinline "href="
 	findinline ">"
-	outputto "tmp_Genre2"
 	sayuntil "<"
-	outputto "genre"
-	sayoutput "tmp_Genre1"
-	say "/"
-	sayoutput "tmp_Genre2"
+	# 2nd Genre
+	findinline "href=" 1 1
+	movechar -1
+	if "="
+		findinline ">"
+		outputto "tmp_Genre2"
+		sayuntil "<"
+		outputto "genre"
+		sayoutput "tmp_Genre1"
+		say "/"
+		sayoutput "tmp_Genre2"
+	else
+		outputto "genre"
+		sayoutput "tmp_Genre1"
+	endif
 else
-	outputto "genre"
-	sayoutput "tmp_Genre1"
+	gotoline 1
 endif
 
 # Rating
@@ -311,16 +306,6 @@ sayoutput "Series"
 # Set Series # as Movement #
 outputto "MOVEMENT"
 sayoutput "series-part"
-
-# Set Title (Chapter) if no tag to Album (Year) - pt Track
-IfnotOutput Title
-	outputto "Title"
-	sayoutput "ALBUM"
-	say " ("
-	sayoutput "Year"
-	say ") - pt"
-	sayoutput "track"
-endif
 
 # © Year, ©, Release Year, Publisher, the closest we can get to Original Pub year, Audible is not consistent with dates
 findline "</div>"
