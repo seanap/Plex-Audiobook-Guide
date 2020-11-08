@@ -133,9 +133,18 @@ find /full/path/to/Original/ -type f \( -iname \*.m4b -o -iname \*.mp3 -o -iname
 `*/2 * * * * /bin/sh /path/to/BookCopy.sh`  
 </details>
 
-<!-- blank line -->
-----
-<!-- blank line -->
+---
+### (Optional) Automatically convert mp3 audiobooks to chapterized M4B [Linux+Windows]
+
+Let's face it, Large Libraries Sink Ships. Everything runs quicker, and smoother, the lower the total number of files there are to scan.  Let's say you have 5000 books.  If they were mp3's then you would be looking at least 100,000 files, vs 5000 m4b's.  M4b's can also hold chapter data, and generally the metadata works better with Plex over mp3's.  
+
+If you use both Linux and Windows, I have a Linux script that watches your `/original` folder for newly added mp3 audiobooks and converts them to M4b files with chapters separated by mp3 file.  It's pretty slick.
+
+* Creating and Installing auto-m4b-tool script guide  
+  * https://github.com/seanap/Auto-M4B-Tool#m4b-tool-automation  
+
+---
+
 ### Configure Mp3tag
 * Install, or Upgrade [Mp3tag](https://www.mp3tag.de/en/) to the latest version  
 
