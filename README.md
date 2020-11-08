@@ -5,7 +5,7 @@ This guide is specifically for optimal Audiobook experience using Plex, which in
 * [Goal](#goal)
 * [Working Folders](#working-folders)  
 * [(Optional) Automatically copy untagged Audiobook files to a temp folder](#optional-automatically-copy-untagged-audiobook-files-to-a-temp-folder)  
-* [(Optional) Automatically convert mp3 audiobooks to chapterized M4B(https://github.com/seanap/#optional-automatically-convert-mp3-audiobooks-to-chapterized-m4b-linuxwindows)
+* [(Optional) Automatically convert mp3 audiobooks to chapterized M4B](#optional-automatically-convert-mp3-audiobooks-to-chapterized-m4b-linuxwindows)
 * [Configure Mp3tag](#configure-mp3tag)
   * [Set the default folder](#set-the-default-folder-mp3tag-automatically-looks-for-book-files-in)
   * [Download my example configuration files to Mp3tag's Appdata directory](#download-my-example-configuration-files-to-mp3tags-appdata-directory)
