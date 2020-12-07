@@ -162,8 +162,8 @@ endif
 # Author
 outputto "Albumartist"
 findline "authorLabel"
-moveline 1 1
-joinuntil "</span>"
+moveline 3 1
+joinuntil "</li>"
 regexpreplace "</?[^><]+>" ""
 unspace
 regexpreplace "  +" " "
@@ -173,8 +173,8 @@ sayrest
 # narratorLabel
 outputto "Composer"
 findline "narratorLabel"
-moveline 1 1
-joinuntil "</span>"
+moveline 3 1
+joinuntil "</li>"
 regexpreplace "</?[^><]+>" ""
 unspace
 regexpreplace "  +" " "
