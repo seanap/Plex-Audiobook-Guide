@@ -228,7 +228,7 @@ unspace
 if "categoriesLabel"
 	outputto "tmp_Genre1"
 	findinline "categoriesLabel" 1 1
-	joinuntil "</span>"
+	joinuntil "</li>"
 	findinline "href="
 	findinline ">"
 	sayuntil "<"
@@ -252,27 +252,73 @@ else
 endif
 
 # Rating
-findline "ratingsLabel"
-joinuntil "adbl-buy-box-area"
-findinline "<span class=\"bc-text\" " 1 1
-movechar -22
-if "<span class=\"bc-text\" "
-	findinline ">"
-	outputto "RATING WMP"
-	sayuntil "<"
+gotoline 1
+findline "ratingsLabel" 1 1
+unspace
+if "ratingsLabel"
+	findinline "ratingsLabel"
+	joinuntil "</li>"
+	unspace
+	findinline "<span class=\"bc-text\" " 1 1
+	movechar -22
+	if "<span class=\"bc-text\" "
+		findinline ">"
+		outputto "RATING WMP"
+		sayuntil "<"
+	else
+		outputto "RATING WMP"
+		say "0.1"
+	endif
 else
+	outputto "RATING WMP"
+	say "0.2"
 endif
 
 # Description
-findline "Publisher's Summary</h2>"
-outputto "Comment"
-findline "<span class"
-joinuntil "</span>"
-regexpreplace "</?[^><]+>" ""
+gotoline 1
+findline "bc-text-bold\" >Publisher's Summary</h2>" 1 1
 unspace
-regexpreplace "  +" " "
-replace "bc-color-secondary\" >" ""
-sayrest
+if "bc-text-bold\" >Publisher's Summary</h2>"
+	outputto "Comment"
+	findline "<span class"
+	joinuntil "</span>"
+	regexpreplace "</?[^><]+>" ""
+	unspace
+	regexpreplace "  +" " "
+	replace "bc-color-secondary\" >" ""
+	sayrest
+else
+	gotoline 1
+	findline ", \"description\": \"" 1 1
+	unspace
+	if ", \"description\": \""
+		outputto "Comment"
+		findinline ", \"description\": \""
+		unspace
+		joinuntil ", \"image"
+		unspace
+		regexpreplace "</?[^><]+>" ""
+		unspace
+		regexpreplace "  +" " "
+		replace ", \"description\": \"" ""
+		sayuntil ", \"image"
+		findline ", \"publisher\": \""
+		unspace
+		findinline ": \""
+		outputto "Publisher"
+		sayuntil "\""
+		findline ", \"datePublished\": \""
+		unspace
+		findinline ": \""
+		outputto "Year"
+		SayNChars 4
+		outputto "RELEASETIME"
+		sayoutput "Year"
+	else
+	endif
+endif
+
+# Inbedded Description (if no Publisher's Summary exists)
 
 # Set Artist = artist, narrator
 outputto "artist"
@@ -309,8 +355,8 @@ sayoutput "series-part"
 
 # © Year, ©, Release Year, Publisher, the closest we can get to Original Pub year, Audible is not consistent with dates
 findline "</div>"
+unspace
 joinuntil "</span>"
-#findline "(P)"
 findinline "(P)" 1 1
 movechar -17
 if "Public Domain"
@@ -319,34 +365,34 @@ if "Public Domain"
 	outputto "year"
 	findinline "(P)"
 	SayNChars 4
+	outputto "RELEASETIME"
+	sayoutput "year"
 	outputto "Publisher"
 	movechar 1
 	sayuntil "<"
 else
-	gotoline 1
-	findline "©"
-	findinline "©"
-	outputto "Year"
-	SayNChars 4
-	gotoline 1
-	findline "©"
-	replace "(P)" "; "
-	findinline "©"
-	outputto "Copyright"
-	sayuntil ";"
-	movechar 2
-	outputto "RELEASETIME"
-	SayNChars 4
-	outputto "Publisher"
-	movechar 1
-	sayuntil "<"
+	findline "</div>" 1 1
+	unspace
+	findinline "©" 1 1
+	movechar -1
+	If "©"
+		IfNot " Copyright"
+			movechar 1
+			outputto "Year"
+			SayNChars 4
+			findline "</div>"
+			replace "(P)" "; "
+			findinline "©"
+			outputto "Copyright"
+			sayuntil ";"
+			movechar 2
+			outputto "RELEASETIME"
+			SayNChars 4
+			outputto "Publisher"
+			movechar 1
+			sayuntil "<"
+		else
+		endif
+	else
+	endif
 endif
-
-# Set Discnumber
-#outputto "DISCNUMBER"
-#sayoutput "series-part"
-
-# NOT WORKING
-# Set SERIES = Mood as a workaround for filtering collections in PLEX
-#outputto "MOOD"
-#sayoutput "series"
