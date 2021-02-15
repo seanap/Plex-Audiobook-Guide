@@ -40,6 +40,16 @@ Show as much metadata as possible in Plex &amp; Booksonic.  Filter/browse/searc
 <!-- blank line -->
 ----
 <!-- blank line -->
+
+### Backing up your Audible books
+I plan on having a seprate walkthrough that will take you through backing up your Audible .aax files, and converting them to chapterized .M4B files. Plex handles M4B metadata better than mp3's, some third party players like Prologue and BookCamp can handle the M4B chapter splits and names, and generally having less files helps plex run smoother.  
+
+In the mean time please check out this awesome guide here: http://checkthebenchmarks.com/2019/09/23/why-you-should-manage-your-own-audible-library/
+
+For some more Software resources for audiobook management. Especially Audible-centric, including organization and removing DRM from Audible files check out [@rmcrackan](https://github.com/rmcrackan)'s [AudiobookHub](https://github.com/rmcrackan/AudiobookHub)
+
+----
+
 ### Working folders
 I have 3 working directories for my Audiobooks:
 * `~/Original` Folder where I keep the un-altered original audio Files  
