@@ -1,6 +1,7 @@
 # Plex & Booksonic Audiobook Guide
 This guide is specifically for optimal Audiobook experience using Plex, which in it's current state only quasi-supports audiobooks. This is my method for getting the most metadata into Plex in the least amount of time.  I'll be doing a deep dive into some advanced features of the tools available to us in order to get a nice, clean, and functional UI. This guide is meant to serve as a framework for fully utilizing metadata.  Everything is customizable, and easy to change.
 
+***Note**: This guide targets and has been tested on Windows systems. Most of it also works on Unix but Mp3tag only exists for Windows. For workarounds see [issue #2](/../../issues/2).*
 ### Contents
 * [Goal](#goal)
 * [Working Folders](#working-folders)  
