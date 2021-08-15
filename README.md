@@ -360,13 +360,15 @@ I did a lot of digging into ID3 standards and this was the best way I could come
 <!-- blank line -->
 ### Players:
 * **iOS**  
-    1. [Prologue](https://apps.apple.com/us/app/prologue/id1459223267) - Connects to Plex  
-    2. [Play:Sub](https://apps.apple.com/us/app/play-sub-music-streamer/id955329386) - Connects to Booksonic  
+    1. [BookCamp](https://apps.apple.com/fr/app/bookcamp/id1523540165) - Connects to Plex, Cross Platform, NEW!
+    2. [Prologue](https://apps.apple.com/us/app/prologue/id1459223267) - Connects to Plex  
+    3. [Play:Sub](https://apps.apple.com/us/app/play-sub-music-streamer/id955329386) - Connects to Booksonic  
 * **Android**  
-    1. [Chronicle](https://play.google.com/store/apps/details?id=io.github.mattpvaughn.chronicle) - Connects to Plex, just released (limited functionality), aims to be similar to Prologue  
-    2. [PlexAmp](https://plexamp.com/) - Connects to Plex, Official Plex audio app, Basic audiobook features but works well enough  
-    3. [Booksonic](https://play.google.com/store/apps/details?id=github.popeen.dsub) - Connects to [Booksonic](https://booksonic.org/), has a few quirks but it works  
-    4. [Smart](https://play.google.com/store/apps/details?id=ak.alizandro.smartaudiobookplayer) - Local media files only, but tons of great Audiobook specific features  
+    1. [BookCamp](https://play.google.com/store/apps/details?id=app.bookcamp.android) - Connects to Plex, Cross Platform, NEW!
+    2. [Chronicle](https://play.google.com/store/apps/details?id=io.github.mattpvaughn.chronicle) - Connects to Plex, limited functionality  
+    3. [PlexAmp](https://plexamp.com/) - Connects to Plex, Official Plex audio app, Music focused player, easy to lose your place.  
+    4. [Booksonic](https://play.google.com/store/apps/details?id=github.popeen.dsub) - Connects to [Booksonic](https://booksonic.org/), has a few quirks but it works  
+    5. [Smart](https://play.google.com/store/apps/details?id=ak.alizandro.smartaudiobookplayer) - Local media files only, but tons of great Audiobook specific features  
 <!-- blank line -->
 ----
 <!-- blank line -->
@@ -375,9 +377,8 @@ Once you have mp3tag, Audiobook metadata agent, and Plex configured the work flo
 
 Following this guide will also give you everything you need for a properly organized Booksonic server.  While Plex doesn't really care about your folder structure beyond `/Audiobook/Author/Book/book.mp3`, Booksonic exclusively uses folder structure for it's organization and it also looks for `cover.jpg`/`desc.txt`/`reader.txt` files (automatically created with the Action script) for additional metadata.
 
-If you have an iOS device use the [Prologue app](https://prologue-app.com/), it is *miles* better than the Plex for iOS app.
+If you have an iOS or Android device use [BookCamp](https://www.bookcamp.app/), it is *miles* better than the Plex app and PlexAmp and works on both iOS and Android.
 
-For Android devices, I recently started using the updated PlexAmp Android app and it handles Audiobooks much better. It's still not at the same level as Prologue, or a dedicated player like Smart. Pros: It lets you filter/browse by Genre, Narrator, Year, it remembers where you left off very well, it supports Car Play and Android Auto. Cons: Suffers from the 90% marked as Played bug in plex, no sleep timer, requires PlexPass.
 <!-- blank line -->
 ----
 <!-- blank line -->
