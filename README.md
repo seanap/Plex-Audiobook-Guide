@@ -253,8 +253,7 @@ Your New Action should look like this:
 <!-- blank line -->
 ### Configure Plex
 #### Install Metadata Agent for Plex
-Follow the Instructions [here](https://github.com/seanap/Audiobooks.bundle#installation)
-* `https://github.com/seanap/Audiobooks.bundle#installation`
+Follow the Instructions [here](https://github.com/djdembeck/Audnexus.bundle`
 
 <details>
 <summary>Alternate Installation using WebTools Plex Plugin (click to expand)</summary>
@@ -267,27 +266,28 @@ Follow the Instructions [here](https://github.com/seanap/Audiobooks.bundle#insta
 * Install the Audiobook Metadata Agent using WebTools:  
   * In the WebTools page Click `UAS`
   * Enter the following Manual Installation URL
-    * `https://github.com/seanap/Audiobooks.bundle`
+    * `https://github.com/djdembeck/Audnexus.bundle`
   * Restart Plex
 </details>
 
 #### Configure Metadata Agent in Plex  
-* Go to `Settings > Agents > Artist > Audiobooks` Put Local Media Assets above Audiobooks
- ![alt text](https://i.imgur.com/oEKdpmd.png "Artist Agent Config")
-* Go to `Settings > Agents > Albums > Audiobooks` Put Local Media Assets above Audiobooks
- ![alt text](https://i.imgur.com/1aKHJeB.png "Album Agent Config")
+* Go to `Settings > Agents > Artist > Audiobooks` Put Audnexus above Local Media Assets  
+ ![alt text](https://i.imgur.com/5ZJmSXf.png "Artist Agent Config")
+* Go to `Settings > Agents > Albums > Audiobooks` Put Audnexus above Local Media Assets  
+ ![alt text](https://i.imgur.com/AgzM1Wm.png "Album Agent Config")
 
 #### Create Audiobook Library in Plex
- * **General** select `Music`
- * **Add folders** browse to your Audiobook folders
+ * **General** select `Music`  
+ * **Add folders** browse to your Audiobook folders  
  * **Advanced** set the following:  
-   * Album sorting - By Name (This uses the Albumsort tag to keep series together and in order)
-   * *UNCHECK* Prefer Local Metadata
-   * *CHECK* Store track progress
-   * *UNCHECK* Popular Tracks
-   * Genres - Embedded tags
-   * Album Art - Local Files Only
-   * Agent - Audiobooks
+   * Agent = Audnexus Agents  
+   * Keep existing genre's - The new agent pulls 4-6 meaningful genres but if you want to keep your existing CHECK this box  
+   * Album sorting - By Name (This uses the Albumsort tag to keep series together and in order)  
+   * *UNCHECK* Prefer Local Metadata  
+   * *CHECK* Store track progress  
+   * *UNCHECK* Author Bio  
+   * Genres = None  
+   * Album Art = Local Files Only
 <!-- blank line -->
 ----
 <!-- blank line -->
