@@ -253,7 +253,8 @@ Your New Action should look like this:
 <!-- blank line -->
 ### Configure Plex
 #### Install Metadata Agent for Plex
-Follow the Instructions [here](https://github.com/djdembeck/Audnexus.bundle`
+Follow the Instructions [here](https://github.com/djdembeck/Audnexus.bundle)
+* `https://github.com/djdembeck/Audnexus.bundle`
 
 <details>
 <summary>Alternate Installation using WebTools Plex Plugin (click to expand)</summary>
