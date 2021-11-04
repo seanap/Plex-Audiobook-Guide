@@ -23,3 +23,8 @@ F=reader
 2=0
 3=0
 
+[#4]
+T=5
+1=%_filename%
+F=TITLE
+
