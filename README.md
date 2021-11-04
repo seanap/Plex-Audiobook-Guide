@@ -244,9 +244,9 @@ Your New Action should look like this:
 * Click the Action drop down button, select the Action that corresponds with the number of files  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")  
   You have three different actions to use depending on the number of files the book has;
-  * For a single track, use the 1 m4b Action. This Action does *not* append a `-pt01` to the end of the filename.  
-  * For 2-99 tracks, use the 01 Action. It will append `-pt01` to the end of the filename.  
-  * For 100-999 tracks, use the 001 Action. It will append `-pt001` to the end of the filename.  
+  * For a single track, use the 1 m4b Action. This Action does *not* append a `-pt01` to the end of the filename. Keyboard Shortcut = `Alt+a 1`  
+  * For 2-99 tracks, use the 01 Action. It will append `-pt01` to the end of the filename. Keyboard Shortcut = `Alt+a 2`  
+  * For 100-999 tracks, use the 001 Action. It will append `-pt001` to the end of the filename. Keyboard Shortcut = `Alt+a 3`  
 
 <!-- blank line -->
 ----
@@ -301,10 +301,10 @@ Now that the hard part of setting everything up is out of the way, this is what 
   2. `Ctrl-k` Set/fix the track numbers
   3. `Ctrl-shift-i` or Click the Web Source (quick) button
 ![alt text](https://i.imgur.com/AjJbUqE.png "Tag Source")
-  4. Click the Action drop down button, select the Action that corresponds with the number of files  
+  4. `Alt+a 1` or Click the Action drop down button, select the Action that corresponds with the number of files  
   ![alt text](https://i.imgur.com/knf3ATb.png "Filename-Folder-Cover")
-  5. This does not set the Title tag, which Plex uses as the Chapter Name.  There are two easy options to set this:  
-      * Click the `Filename - Tag` button, `Format String=` `%Title%`, this will set the filename as the Chapter name.  
+  5. Plex uses the TITLE tag as the Chapter Name:  
+      * Click the `Filename - Tag` button, `Format String=` `%Title%`, this will set the filename as the Chapter name. (This is automatically done for the "1 m4b" action) 
       * Click the Action drop down, select `Chapter %track%` which will give you a generic "Chapter 1, Chapter 2, ..."  
 <!-- blank line -->
 ----
