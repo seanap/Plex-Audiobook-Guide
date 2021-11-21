@@ -1,7 +1,7 @@
 # Plex & Booksonic Audiobook Guide
 This guide is specifically for optimal Audiobook experience using Plex, which in it's current state only quasi-supports audiobooks. This is my method for processing large libraries with bad/missing tags as quick as possible while getting the most metadata into Plex in the least amount of time.  I'll be doing a deep dive into some advanced features of the tools available to us in order to get a nice, clean, and functional UI. This guide is meant to serve as a framework for fully utilizing metadata.  Everything is customizable, and easy to change.  While focused on Plex, if you follow the tagging and file processing steps you will also be compatible with Booksonic and AudiobookShelf servers.
 
-***Note**: This guide targets and has been tested on Windows systems. Most of it also works on Linux/Mac but the Mp3tag Audible WebSource script only works on Windows. For workarounds see [issue #2](/../../issues/2).*
+> ***Note**: This guide targets and has been tested on Windows systems. Most of it also works on Linux/Mac but the Mp3tag Audible WebSource script only works on Windows. For workarounds see [issue #2](/../../issues/2).*
 ### Contents
 * [Goal](#goal)
 * [Working Folders](#working-folders)  
@@ -24,6 +24,7 @@ This guide is specifically for optimal Audiobook experience using Plex, which in
 
 ### Goal
 Show as much metadata as possible in Plex &amp; Booksonic.  Filter/browse/search by Narrator, Author, Genre, Year, Series, Rating, or Publisher.  Show Album Covers and Summary's. Make the organizing and tagging as quick and painless as possible. We need to do these 4 general steps:  
+
 0. (Optional) Convert mp3's to chapterized m4b.  
 1. Ensure the ALBUM and ALBUMARTIST (or ARTIST) tags are set and correct.  
 2. Install the Audnexus Audible Metadata Agent in Plex.  
