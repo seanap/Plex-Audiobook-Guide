@@ -173,6 +173,7 @@ sayrest
 # narratorLabel
 outputto "Composer"
 findline "narratorLabel" 1 1
+unspace
 if "narratorLabel"
 	moveline 3 1
 	joinuntil "</li>"
