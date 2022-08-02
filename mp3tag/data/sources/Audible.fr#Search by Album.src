@@ -167,7 +167,7 @@ joinuntil "</li>"
 regexpreplace "</?[^><]+>" ""
 unspace
 regexpreplace "  +" " "
-regexpreplace ".+By:" ""
+regexpreplace ".+De :" ""
 sayrest
 
 # narratorLabel
@@ -178,7 +178,7 @@ joinuntil "</li>"
 regexpreplace "</?[^><]+>" ""
 unspace
 regexpreplace "  +" " "
-regexpreplace ".+Narrated by:" ""
+regexpreplace ".+Lu par :" ""
 sayrest
 
 # Grouping / Series
@@ -192,7 +192,7 @@ if "seriesLabel"
 	findinline ">"
 	sayuntil "<"
 	outputto "series-part"
-	findinline "a>, Book " 1 1
+	findinline "a>, Volume " 1 1
 	SayRegexp "^[.?\d]+(?=,|$)"
 	outputto "Albumsort"
 	sayoutput "series"
