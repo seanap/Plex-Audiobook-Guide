@@ -228,21 +228,76 @@ unspace
 if "categoriesLabel"
 	outputto "tmp_Genre1"
 	findinline "categoriesLabel" 1 1
-	joinuntil "</li>"
+	joinuntil "Show more"
 	findinline "href="
 	findinline ">"
 	sayuntil "<"
-	# 2nd Genre
+# 2nd Genre
 	findinline "href=" 1 1
 	movechar -1
 	if "="
+		findinline "<span class=\"bc-chip-text\" data-text="
 		findinline ">"
 		outputto "tmp_Genre2"
 		sayuntil "<"
-		outputto "genre"
-		sayoutput "tmp_Genre1"
-		say "/"
-		sayoutput "tmp_Genre2"
+# 3rd Genre		
+		findinline "href=" 1 1
+		movechar -1
+		if "="
+			findinline "<span class=\"bc-chip-text\" data-text="
+			findinline ">"
+			outputto "tmp_Genre3"
+			sayuntil "<"
+# 4th Genre				
+			findinline "href=" 1 1
+			movechar -1
+				if "="
+					findinline "<span class=\"bc-chip-text\" data-text="
+					findinline ">"
+					outputto "tmp_Genre4"
+					sayuntil "<"
+# 5th Genre						
+					findinline "href=" 1 1
+					movechar -1
+						if "="
+							findinline "<span class=\"bc-chip-text\" data-text="
+							findinline ">"
+							outputto "tmp_Genre5"
+							sayuntil "<"
+							outputto "genre"
+							sayoutput "tmp_Genre1"
+							say "/"
+							sayoutput "tmp_Genre2"
+							say "/"
+							sayoutput "tmp_Genre3"
+							say "/"
+							sayoutput "tmp_Genre4"
+							say "/"
+							sayoutput "tmp_Genre5"
+						else
+							outputto "genre"
+							sayoutput "tmp_Genre1"
+							say "/"
+							sayoutput "tmp_Genre2"
+							say "/"
+							sayoutput "tmp_Genre3"
+							say "/"
+							sayoutput "tmp_Genre4"
+						endif
+				else
+					outputto "genre"
+					sayoutput "tmp_Genre1"
+					say "/"
+					sayoutput "tmp_Genre2"
+					say "/"
+					sayoutput "tmp_Genre3"
+				endif
+		else	
+			outputto "genre"
+			sayoutput "tmp_Genre1"
+			say "/"
+			sayoutput "tmp_Genre2"
+		endif
 	else
 		outputto "genre"
 		sayoutput "tmp_Genre1"
