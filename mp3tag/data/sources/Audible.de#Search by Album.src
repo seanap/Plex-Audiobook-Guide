@@ -161,7 +161,7 @@ endif
 
 # Author
 outputto "Albumartist"
-findline "authorLabel"
+findline "authorLabel" 1 1
 moveline 3 1
 joinuntil "</li>"
 regexpreplace "</?[^><]+>" ""
@@ -171,15 +171,20 @@ regexpreplace ".+Autor:" ""
 sayrest
 
 # narratorLabel
-outputto "Composer"
-findline "narratorLabel"
-moveline 3 1
-joinuntil "</li>"
-regexpreplace "</?[^><]+>" ""
+findline "narratorLabel" 1 1
 unspace
-regexpreplace "  +" " "
-regexpreplace ".+Sprecher:" ""
-sayrest
+if "narratorLabel"
+	outputto "Composer"
+	moveline 3 1
+	joinuntil "</li>"
+	regexpreplace "</?[^><]+>" ""
+	unspace
+	regexpreplace "  +" " "
+	regexpreplace ".+Sprecher:" ""
+	sayrest
+else
+	gotoline 1
+endif
 
 # Grouping / Series
 findline "seriesLabel" 1 1
@@ -321,10 +326,15 @@ endif
 # Inbedded Description (if no Publisher's Summary exists)
 
 # Set Artist = artist, narrator
-outputto "artist"
-sayoutput "Albumartist"
-say ", "
-sayoutput "Composer"
+IfnotOutput "Composer"
+	outputto "artist"
+	sayoutput "Albumartist"
+else
+	outputto "artist"
+	sayoutput "Albumartist"
+	say ", "
+	sayoutput "Composer"
+endif
 
 #%artist%=regexp(%artist%,(\b\w+\b)(?=[\s\S]*\b\1\b).+, )
 
