@@ -33,7 +33,7 @@
 #Debug "ON" "C:\Users\%user%\Desktop\mp3tagdebug.txt"
 
 #Only select the area we need instead of everyting.
-findline "<ul  class=\"bc-list"
+findline "center-3"
 joinuntil "center-4"
 
 regexpreplace "\s\s+" " "
